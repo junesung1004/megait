@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .cont {
+        display: grid;
+        gap: 10px;
+        padding: 10px;
+        background-color: coral;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: 1fr 3fr 1fr;
+        grid-template:
+          "header header header"
+          "sideA sideA sideA"
+          "sideB sideB sideB"
+          ". content .";
+      }
+      .item {
+        border: 2px solid black;
+        background: pink;
+      }
+      .header {
+        grid-area: header;
+      }
+
+      .sideA {
+        grid-area: sideA;
+      }
+      .sideB {
+        grid-area: sideB;
+      }
+      .content {
+        grid-area: content;
+      }
+      .footer {
+        grid-area: footer;
+      }
+      /*
+    
+    template-areas
+    각 영역에 이름을 붙여서 배치하는 방법
+    label과 비슷한 방법이며, 영역이 차지할 공간많큼 이름을 표시한다.
+    
+    */
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <div class="header item">header</div>
+      <div class="sideA item">sideA</div>
+      <div class="sideB item">sideB</div>
+      <div class="content item">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aut,
+        quos ullam molestias vitae quasi facere nesciunt, voluptatibus
+        voluptatem repudiandae corrupti, nisi quo dicta placeat commodi minus!
+        Maxime mollitia error, suscipit, nulla ipsa sapiente veritatis voluptas
+        aliquid aliquam ratione quibusdam at, dicta maiores omnis pariatur vero
+        ab nemo natus cum?
+      </div>
+      <div class="footer item">footer</div>
+    </div>
+  </body>
+</html>
