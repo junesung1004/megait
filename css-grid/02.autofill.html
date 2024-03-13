@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>auto-fill 과 auto-fit</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: grid;
+        padding: 10px;
+        background: coral;
+        margin-bottom: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+        /*
+        
+          auto-fill, auto-fit
+          repaer의 갯수를 정하지 않고 사이즈로만 정해야 할 때 허용하는 많큼 최대한 영역을  채우는 css
+          auto-fill: 영역보다 들어가는 갯수가 모자를 경우 영역을 비워줌
+          auto-fit: 영역보다 들어가는 갯수가 모자를 경우 영역을 채워줌
+        
+        */
+      }
+      .item {
+        border: 1px solid black;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+    </div>
+
+    <!-- 2번째 케이스 -->
+    <div class="container02">
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+    </div>
+  </body>
+</html>

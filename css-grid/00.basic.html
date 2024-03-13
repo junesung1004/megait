@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </body>
+  <style>
+    /*
+  
+  플렉스는 하나의 컨텐츠를 하나의 방향으로 정렬하는 1차원 css 레이아웃 정렬 css라고 하면
+  그리드는 컨텐츠를 두 방향으로 정렬하는 2차원 레이아웃 정렬 css
+  하나의 작은 컨텐츠보다 하나의 페이지를 만들때 적합하다.
+
+  용어 정리
+  1. container
+  wrapper or grid-box 같은 다양한 이름이 있으며
+  grid가 적용되는 전체 영역을 말한다.
+
+  2.item
+  grid가 선언된 하위 요소
+
+  3.track
+  가로와 세로 방향을 의미하며 그림안에서는 빨간색과 녹색 라인을 의미한다.
+  그리드를 구성하는 기본 단위중 하나
+  가로(열, colum), 세로(행, row)로 구분한다.
+
+  4.cell
+  그리드를 구분하는 라인
+    라인과 라인 사이의 공간을 의미하며 라인을 셀을 구분한다.
+    트랙은 방향을 의미 셀은 공간을 의미
+
+    5. 그리드 라인
+    grid 셀을 구분하는 선
+    그리드 라인은 각 행과 열의 시작과 끝에 위치하며, 그리드 구조를 정의할때 사용!
+    각 라인에는 번호가 할당되며(1부터 할당), 그리드 아이템의 배치를 지정할때
+
+    6. 그리드 번호
+    grid라인의 각 번호
+
+    7. gap
+    cell과 cell 사이의 여백
+
+    8. 그리드 영역
+    grid라인으로 둘러싸인 영역으로 셀들이 모인 집합체이다.
+    추후에 이름으로 하나의 그룹으로 정의할 수 있다.
+    
+  */
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: auto;
+      gap: 20px;
+    }
+
+    .box {
+      background-color: aqua;
+    }
+  </style>
+</html>
