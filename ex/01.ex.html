@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+      특정한 title중에 'A'라는 타이틀을 분류하는 함수를 작성
+      console.log에 a라는 title이 몇개 있는지 출력
+      */
+
+      let votes = [
+        { id: 1, title: "A" },
+        { id: 2, title: "A" },
+        { id: 3, title: "C" },
+        { id: 4, title: "B" },
+        { id: 5, title: "A" },
+      ];
+
+      const answer = () => {
+        let a = 0;
+
+        for (let i of votes) {
+          if (i.title === "A") {
+            a++;
+          }
+        }
+        return console.log(a);
+      };
+
+      answer();
+
+      /*
+       function countVotes(votes, title) {
+        let count = 0; // count를 받아올 매개변수 기본값 0으로 설정
+
+        for (let i = 0; i < votes.length; i++) {
+          if (votes[i].title === title) {
+            count++;
+          }
+        }
+        return count;
+      }
+
+      console.log(countVotes(votes, "A"));
+      */
+    </script>
+  </head>
+  <body></body>
+</html>
