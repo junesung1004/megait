@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자식요소 참조하기</title>
+    <script>
+      /*
+    부모요소안에 자식요소로 객체를 찾거나, 삭제, 수정하는 선택자 메서드
+
+    appendChild() = 선택된 부모의 자식요소로 추가
+    removeChild() = 선택된 부모의 자식요소를 삭제
+    replaceChild() = 선택된 부모의 자식요소를 수정
+
+    */
+
+      window.onload = function () {
+        let parent = document.querySelector(".parent");
+        let childItem = document.createElement("div");
+        let childItem02 = '<div class="child">5</div>';
+        childItem.className = "child"; // 태그의 클래스를 추가하는 코드
+        childItem.innerHTML = "6";
+
+        //parent.innerHTML = childItem02;
+        //innerHTML = 기존의 내용을 모두 삭제하고 새로운 내용으로 교체4
+
+        parent.innerHTML += childItem02;
+        // += 하면 기존내용을 지우고 교체되는게 아닌 추가해주는거로 바뀐다.
+
+        parent.appendChild(childItem);
+
+        parent.removeChild(parent.childNodes[3]);
+
+        let a = parent.childNodes;
+        console.log(a);
+
+        let b = parent.childElementCount;
+        console.log(b);
+
+        let c = parent.lastChild;
+        console.log(c);
+
+        /* node = 문서객체 모델의 기본 구성요소
+        // childNodes 는 텍스트와 노드를 모두 포함해서 출력
+        //(노드 사이에 있는 공백, 텍스트도 포함하기 때문에 갯수가 달라질 수 있다.)
+        
+        parent.childElementCount;
+        공백이나 텍스트와 같은 비노드를 제외한 순수 부모의 직계 자식 요소수만 반환
+        가장 정확한 값을 의미하기도 한다.
+        */
+      };
+    </script>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">4</div>
+    </div>
+  </body>
+</html>

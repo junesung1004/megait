@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom</title>
+    <script>
+      /*
+    dom
+    -html 문서 내에 있는 모든 요소들을 말한다.
+    -페이지 내에 있는 모든 html요소들을 컨트롤할 수 있다.(추적, 생성, 변형, 삭제)
+    -페이지 내에 있는 모든 css요소들을 컨트롤할 수 있다.
+    -페이지 내에 있는 모든 요소에 이벤트를 적용할 수 있다.(클릭, 마우스, 키보드)
+    */
+      window.onload = function () {
+        let a = document.getElementById("text"); // 식별자는 생략
+        console.log(a);
+
+        let b = document.getElementsByClassName("text")[1];
+        console.log(b);
+
+        let c = document.getElementsByTagName("p")[2];
+        console.log(c);
+
+        let d = document.querySelector(".text");
+        //document.querySelector() 는 중복 선택되지 않는 경우 첫번째 요소만 반환
+        console.log(d);
+
+        let e = document.querySelectorAll(".text")[2];
+        console.log(e);
+
+        a.style.color = "aqua";
+        b.style.color = "pink";
+        c.style.backgroundColor = "red";
+      };
+      /*
+      dom 요소에 스크리브가 접근할 때에는 순서나 선언에 유의한다.
+      1.dom요소보다 먼저 스크립트가 로드되면 안됨
+      (body 아래 script를 선언하거나 혹은 window이벤트를 넣어서 지연시키도록 해야 한다.)
+      2.선택자에 따라 인덱스를 추가하는 경우가 생긴다.
+      (id는 중복불가 즉 고유값이기 때문에 상관없지만 태그나 클래스명은
+      인덱스 번호를 넣어야 정확한 값을 출력한다.)
+      3.스타일 중에서 '-' 으로 분류되는 스타일의 경우 카멜기멉으로 변환하여 사용
+      background-color = backgroundColor
+      */
+    </script>
+  </head>
+  <body>
+    <p class="text">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, autem.
+    </p>
+    <p class="text">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, autem.
+    </p>
+    <p class="text">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, autem.
+    </p>
+    <p class="text">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, autem.
+    </p>
+    <p class="text">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, autem.
+    </p>
+    <p id="text">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, autem.
+    </p>
+  </body>
+</html>

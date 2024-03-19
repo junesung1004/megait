@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>date</title>
+    <script>
+      /*
+    시간과 관련된 메서드들의 모임
+    기본적으로 출력되는 모든 값들은 응답을 요청하는 시간을 기준으로 작성됨
+    */
+
+      let date = new Date(); // 현재 시간을 기준으로 date가 생성됨
+      console.log("현재시간", date); // Tue Mar 19 2024 11:41:31 GMT+0900 (한국 표준시)
+      let date01 = new Date("2024/03/20/12:00:00"); // 시간을 직접 정할수도 있다. 보통 countdown 할 때 많이 사용
+      console.log("현재시간", date01);
+
+      let year = date.getFullYear(); // 현재 시간에서 년도만 추출하는 기능
+      console.log("연도", year); // 2024
+
+      let year01 = date.getYear();
+      console.log("연도", year01); // 현재년도에서 1900을 뺀 값을 반환 -- 사용하지 않음
+
+      let month = date.getMonth() + 1; // 현재 시간에서 월 만 추출  1월을 0부터 시작하기 때문에 + 1을 해줘야 한다.
+      console.log("월", month); // 3
+
+      let days = date.getDate(); // 현재 시간에서 시 를 반환 24시간이 기준
+      console.log("일", days); // 19
+
+      let day = date.getDay(); // 월요일, 화요일 등 요일을 숫자로 출력 0부터 시작 --- 일, 월, 화, 수, 목, 금, 토  순으로 시작
+      console.log("요일", day);
+
+      let hours = date.getHours(); // 현재 시간에서 시 만 추출
+      console.log("몇시", hours); // 11
+
+      let minutes = date.getMinutes(); // 현재 시간에서 분 추출
+      console.log("몇분", minutes); // 41
+
+      let seconds = date.getSeconds(); // 현재 시간에서 초 추출
+      console.log("몇초", seconds); // 31
+
+      let mSec = date.getMilliseconds(); // 1초를 밀리세컨 단위로 출력 0~999ms
+      console.log(mSec);
+
+      let times = date.getTime(); // 1970년 1월 1일부터 현재 까지의 시간을 밀리세컨 단위로 변환하여 출력
+      console.log(times);
+    </script>
+  </head>
+  <body></body>
+</html>
