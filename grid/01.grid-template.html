@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gird-template</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        /*
+        container에 넣는 속성
+        gird-template-column, gird-template-row
+        트랙의 크기를 지정하는 속성
+
+        fr : fraction(조각)
+        flex-grow와 같은 의미를 가지며, item이 아닌 container에 설정
+
+        repeat 패턴에 대한 반복 속성
+        repeate(횟수, 값)
+        grid-template-columns: repeat(2,1fr 3fr)
+        1fr 3fr의 값을 2번 반복해서 작성한 것과 같음
+        minmax : 최소값과 최대값의 설정
+        min-width, max-width와 같은 원리이며, 영역안에 내용이 없어도
+        최소값만큼 유지하며, 최대값만큼 늘어나지 않는다.
+        px과 같은 고정값이 아닌 auto의 경우 크기를 계속 늘릴수 있다.
+
+        */
+        .container{
+            display: grid;
+            background: coral;
+            padding: 10px;
+            /*grid-template-columns: 1fr 3fr 1fr 3fr 1fr 3fr;*/
+            /*grid-template-columns: repeat(2,1fr 3fr);*/
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, minmax(100px,auto));
+        }
+        .item{
+            border: solid 2px black;
+            background: pink;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae ipsum deserunt, sit sint aperiam earum facere saepe deleniti! Aperiam excepturi corrupti provident culpa blanditiis possimus quod repellat et suscipit ex delectus laboriosam, quae harum, ipsa nostrum iure aliquid facilis dolore quos labore! Non dolores placeat velit repudiandae cumque pariatur doloremque, sint provident unde laudantium id maxime. Quas officiis ullam harum architecto magni illo ducimus quisquam perferendis, nihil ab necessitatibus aliquam fuga excepturi eveniet voluptates provident corporis atque dolor rerum! Necessitatibus magnam minima quas mollitia, accusamus porro ducimus veniam iusto, assumenda ipsum dicta, eum esse expedita dolor doloremque ab aspernatur odio.</div>
+        <div class="item">item01</div>
+        <div class="item">item01</div>
+        <div class="item">item01</div>
+        <div class="item">item01</div>
+        <div class="item">item01</div>
+        <div class="item">item01</div>
+        <div class="item">item01</div>
+        <div class="item">item01</div>
+        <div class="item">item01</div>
+        <div class="item">item01</div>
+        <div class="item">item01</div>
+        <div class="item">item01</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if문 활용한 문제</title>
+    <script>
+        /*
+        점수 계산
+        값을 직접 입력해주세요;
+
+        조건 1. 국어점수와 영어점수 '둘 다 90점 이상' = a학점(and조건문);
+        조건 2. 국어점수와 영어점수 합이 170점보다 크거나 같으면 b학점;
+        조건 3. 국어점수와 영어점수 둘 중 하나라도 90점이상이면 c학점(or조건문)
+        나머지는 모두 d학점;
+        */
+
+        let kor = prompt('국어점수');
+        let eng = prompt('영어점수');
+        //prompt는 값을 모두 string타입으로 변환하기 때문에 연산이 안되므로 
+        //숫자타입으로 변환하는 작업이 필요하다.
+        //console.log(typeof(kor))
+
+        kor = parseInt(kor)
+        eng = parseInt(eng)
+        //console.log(typeof(kor))
+        //parseInt = 문자열을 정수형 숫자타입으로 변환
+
+        if(kor >=90 && eng >= 90){
+            console.log('A학점')
+        }else if(kor + eng >= 170){
+            console.log('B학점')
+        }else if(kor >=90 || eng >= 90){
+            console.log('C학점')
+        }else{
+            console.log('D학점')
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

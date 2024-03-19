@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grow</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /*
+        grow : item의 사이즈 증가 비율 설정
+        기본값 0, 0이 아닌 숫자가 들어오게 되면 비어있는 여백을 채워서 늘어나게 된다.
+
+        숫자는 배율을 의미하며, 숫자가 다를 경우 배율에 따라 컨텐츠를 제외한 영역으 크기를
+        나눠갖게 된다 기본컨텐츠 크기 + 영역크기
+
+        ex)item의 grow의 값이 1,5,3인 경우
+        grow의 총합인 9를 나눠서
+        1인 item은 1/9
+        5인 item은 5/9
+        3인 item은 3/9 영역을 배분받는다.
+        */
+        .container{
+            display: flex;
+        }
+        
+        .item{
+            flex-grow:1;
+        }
+        .item:nth-of-type(2){
+            flex-grow: 5;
+        }
+        .item:nth-of-type(3){
+            flex-grow: 3;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Lorem.</div>
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">Lorem, ipsum dolor.</div>
+    </div>
+    
+</body>
+</html>

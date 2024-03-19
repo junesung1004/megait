@@ -1,0 +1,42 @@
+/*
+버튼 타입에 따른 다른 스타일 적용하는 mixin 제작
+
+버튼의 매개변수에 
+배경컬러, 폰트컬러, padding : 12px 24px; border : solid 1px transparent
+모든 버튼에 매개변수를 따로 지정하고 클래스에 따라 border-color만 따로 지정
+타입 종류 : submit : blue, cancle : lightgray, error : red
+*/
+
+@mixin btn-style($bg-color, $font-color, $padding, $border, $type){
+    color : $font-color;
+    background: $bg-color;
+    border: $border;
+    padding : $padding;
+
+    @if $type == 'submit'{
+        border-color : blue
+    }@else if $type == 'cancle'{
+        border-color : lightgray;
+    }@else if $type == 'error'{
+        border-color: red;
+    }
+
+}
+// .submit{
+//     @include btn-style(coral, white, 10px 20px, solid 1px transparent, 'submit')
+// }
+
+@mixin btn-style02($bg-color, $font-color, $padding, $border){
+    $type:(submit : blue, cancle : lightgray, error : red);
+
+    @each $key, $value in $type{
+        .#{$key}{
+            background: $bg-color;
+            color : $font-color;
+            padding : $padding;
+            border: $border;
+            border-color: $value;
+        }
+    }
+}
+@include btn-style02(coral, white, 12px 24px, solid 1px transparent)

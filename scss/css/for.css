@@ -1,0 +1,140 @@
+@charset "UTF-8";
+/*
+반복문 
+조건에 따라 사용하는 for문의 종류가 달라진다.
+for, each, while, map
+
+for문 작성법
+@for $변수명 from(시작) through(종료){반복할 코드
+    $변수명은 index를 의미하는 i를 많이 사용(스크립트 동일)
+}
+@for $변수명 from(시작) to(종료){반복 코드}
+
+둘의 차이점은 through는 마지막 번호를 포함하여 적용하고
+to는 마지막 번호를 포함하지 않는다.
+*/
+.list {
+  padding: 12px;
+  background: lightgray;
+  margin-bottom: 12px;
+}
+
+.list li:nth-of-type(1) {
+  background: coral;
+  width: 50px;
+}
+
+.list li:nth-of-type(2) {
+  background: coral;
+  width: 100px;
+}
+
+.list li:nth-of-type(3) {
+  background: coral;
+  width: 150px;
+}
+
+.list li:nth-of-type(4) {
+  background: coral;
+  width: 200px;
+}
+
+.list li:nth-of-type(5) {
+  background: coral;
+  width: 250px;
+}
+
+.list li:nth-of-type(6) {
+  background: coral;
+  width: 300px;
+}
+
+.list li:nth-of-type(7) {
+  background: coral;
+  width: 350px;
+}
+
+.list li:nth-of-type(8) {
+  background: coral;
+  width: 400px;
+}
+
+.list li:nth-of-type(9) {
+  background: coral;
+  width: 450px;
+}
+
+.list li:nth-of-type(10) {
+  background: coral;
+  width: 500px;
+}
+
+.list li:nth-of-type(11) {
+  background: coral;
+  width: 550px;
+}
+
+.list li:nth-of-type(12) {
+  background: coral;
+  width: 600px;
+}
+
+.list02 {
+  padding: 12px;
+  background: lightgray;
+}
+
+.list02 li:nth-of-type(1) {
+  background: coral;
+  width: 50px;
+}
+
+.list02 li:nth-of-type(2) {
+  background: coral;
+  width: 100px;
+}
+
+.list02 li:nth-of-type(3) {
+  background: coral;
+  width: 150px;
+}
+
+.list02 li:nth-of-type(4) {
+  background: coral;
+  width: 200px;
+}
+
+.list02 li:nth-of-type(5) {
+  background: coral;
+  width: 250px;
+}
+
+.list02 li:nth-of-type(6) {
+  background: coral;
+  width: 300px;
+}
+
+.list02 li:nth-of-type(7) {
+  background: coral;
+  width: 350px;
+}
+
+.list02 li:nth-of-type(8) {
+  background: coral;
+  width: 400px;
+}
+
+.list02 li:nth-of-type(9) {
+  background: coral;
+  width: 450px;
+}
+
+.list02 li:nth-of-type(10) {
+  background: coral;
+  width: 500px;
+}
+
+.list02 li:nth-of-type(11) {
+  background: coral;
+  width: 550px;
+}

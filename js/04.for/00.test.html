@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console 구구단 예제</title>
+</head>
+<body>
+    <script>
+        let randomNum = Math.floor((Math.random() * 10) + 1);
+        let num; // 사용자가 입력할 숫자
+        let attempts = 0; // 시도 횟수
+
+        while (true) {
+            num = parseInt(prompt('1부터 10까지의 숫자 중 하나를 입력해주세요:'));
+            attempts++;
+
+            // 사용자가 유효한 숫자를 입력했는지 확인
+            if (isNaN(num)) {
+                console.log('유효한 숫자를 입력해주세요.');
+                continue;
+            }
+
+            // 입력한 값과 랜덤 숫자를 비교
+            if (num === randomNum) {
+                console.log(`정답입니다! ${attempts}번 만에 맞추셨습니다.`);
+                break;
+            } else if (num < randomNum) {
+                console.log('up');
+            } else {
+                console.log('down');
+            }
+        }
+    </script>
+</body>
+</html>

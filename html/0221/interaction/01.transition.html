@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <style>
+        /*
+        transition
+        특정 행동(이벤트)을 취했을때 변화되는 요소가 전환되는 시간적인 효과를
+        보여주는 속성
+
+        -property : 전환되는 대상이 되는 속성(background, width, height, opacity)
+        property를 생략하게 되면 기본값인 all이 적용된다.(생략가능)
+
+        -duration : 전환되는 시간 (생략할 수 없는 값)
+        단위는 s, ms
+        1s = 1초
+        1000ms = 1초
+
+        -delay : 이벤트가 시작되고 나서 전환되기 까지의 지연시간
+        단위는 s, ms (기본값은 0) (생략가능)
+
+        -timing-funtion (시간함수)
+        전환되는 시간동안 시간적인 효과를 주기위한 속성
+
+        -linear : 처음부터 끝까지 일정한 속도를 유지
+        -ease : 느리게 시작 -> 빠르게 진행 -> 느리게 종료(기본값)
+        -ease-in : 느리게 시작해서 가속하면서 종료 
+        -ease-out : 빠르게 시작해서 감속하면서 종료
+        -ease-in-out : ease-in하고 같지만 변환속도가 빠르다. 
+
+        transition 그룹 속성
+
+        transition : property(생략가능) duration(생략 안됨) delay (생략가능) timing-funtion(생략가능)
+        duration을 제외한 나머지 값은 생략해되 된다.
+        다른 속성들은 순서가 바뀌어도 된다. duration과 delay의 순서는 반드시 지켜야 한다.
+        값이 하나면 duration만 적용하고 값이 두 개라면 항상 앞에 있는 값이 duraiton 뒤에 
+        있는 값이 delay가 된다.
+
+        
+        */
+        .box{
+            width: 100px;
+            height: 50px;
+            background: pink;
+            /*
+            transition-property: background;
+            transition-duration: 1000ms; 
+            transition-delay: 1000ms;
+            transition-timing-function: ease-in-out;
+            */
+            transition : 1000ms
+
+        }
+
+        .box:hover{
+            background: coral;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+</body>
+</html>

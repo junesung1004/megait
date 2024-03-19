@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>큐브 만들기</title>
+    <style>
+        .container{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /*
+            margin-left: -150px;
+            margin-top: -150px;
+            */
+            transform: translate(-50%, -50%);
+            perspective: 500px;
+            /*
+            원근감 css
+            객체를 사용자가 일정 거리에서 보는 설정값
+            값이 작으면 가깝게 보이고 왜곡이 심해짐
+            값이 크면 멀리 보이고 왜곡이 적어짐
+            3d 효과를 줄때 필수적으로 들어가는 속성
+            적용할 부모요소에 넣는다.
+            
+            */
+        }
+        .cube{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            transform-style: preserve-3d;
+            /*transition: 1000ms;*/
+            /*
+            3를 적용할 요소에 직접 넣는 값
+            보여지는 형태에 대한 설정값
+            기본값 flat 
+            */
+
+            animation: cube 3000ms infinite linear;
+            animation-play-state: paused;
+
+        }
+        @keyframes cube{
+            100%{
+                transform: rotate3d(0,1,1,360deg);
+            }
+        }
+
+        .cube div{
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            text-align: center;
+            font-size: 24px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            line-height: 300px;
+            
+            /*
+            line-height로 텍스트 가운데 수직 정렬 하기
+            수직 정렬하려는 높이값을 line-height 와 동일하게 하면 한줄 한정으로
+            가운데 정렬을 해줄 수 있다.
+            */
+        }
+
+        .front{
+            background: coral;
+            transform: translateZ(150px);
+        }
+        .back{
+            background: pink;
+            transform: rotateY(180deg) translateZ(150px);
+        }
+        .top{
+            background: cyan;
+            transform: rotateX(90deg) translateZ(150px) ;
+        }
+        .bottom{
+            background: skyblue;
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+        .left{
+            background: yellow;
+            transform: rotateY(90deg) translateZ(150px);
+        }
+        .right{
+            background: yellowgreen;
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+        .cube:hover{
+            /*transform: rotate3d(0,1,0,180deg)*/
+            /*
+            rotate3d(x,y,z,deg)
+            */
+            animation-play-state: running;
+        }
+        /*
+        transform에서 여러개의 값을 활용할때 순서에 의해서도 결과값이 달라지는
+        현상이 생길 수 있다.
+        transform은 적용되는 방식에 의해서 결과값이 달라지기 때문이다.
+        특히 회전과 이동을 조합할 경우 순서를 주의 할 것
+        
+        */
+
+
+    </style>
+</head>
+<body>
+    <div class="container"><!--큐브가 생성될 영역-->
+        <div class="cube"><!--각각의 면들을 감싸줄 영역-->
+            <div class="front">front</div>
+            <div class="back">back</div>
+            <div class="top">top</div>
+            <div class="bottom">bottom</div>
+            <div class="left">left</div>
+            <div class="right">right</div>
+        </div>
+
+    </div>
+</body>
+</html>

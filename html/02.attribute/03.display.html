@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디스플레이 속성</title>
+    <style>
+        /*
+        디스플레이 속성
+        요소들을 보여주는 방식에 대한 속성값
+        *display 속성으로 타입을 변경할 수는 있지만
+        중요한건 본질은 변하지 않는다.
+        즉 span에 block속성을 준다고 해서 div와 같은 박스 역할을 수행할 수 없다.
+        (예외존재)
+
+        inline-block : inline의 특성과 block의 특성을 모두 가지고 있는 혼합형 속성
+        주로 컨텐츠를 좌우로 정렬할때 사용하는 방법중에 하나로 쓰임
+
+        none : 화면상에서 출력하지 않음
+        opatity는 투명도만 관여하기 때문에 영역에 대한 정보는 출력되지만 none은
+        영역에 대해서도 관여하기 때문에 출력되지 않는다.
+        주로 스크립트에서 이벤트 속성과 함께 쓰이며, 다시 나오게 하려면 원래 속성을
+        다시 주면 된다.
+
+        */
+        .inline{
+            width: 300px;
+            height: 300px;
+            background: pink;
+            display: inline;
+        }
+        .block{
+            width: 300px;
+            height: 300px;
+            background: coral;
+            opacity: 0;
+            display: inline-block;
+        }
+        .inline-block{
+            width: 300px;
+            height: 300px;
+            background: gray;
+            display: inline-block;
+        }
+
+        .parent{
+            width: 300px;
+            height: 300px;
+            background: pink;
+            display: block;
+        }
+
+        .parent .child{
+            width: 100px;
+            height: 100px;
+            background: gray;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="inline">box</div>
+    <span class="block">box</span>
+    <div class="inline-block">box</div>
+
+    <span class="parent">
+        <div class="child">child</div>
+    </span>
+</body>
+</html>

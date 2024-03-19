@@ -1,0 +1,57 @@
+/*
+각 영역마다 다른 flex의 속성을 적용
+header : basis : 30%; , padding : 20px, background: gray
+main : basis : 50%, padding : 30px, background : lightgray
+side : basis : 20%, padding : 10px, background : black
+footer : basis : 10%, padding:20px, backgroound: gray
+
+inner에는 각 
+section 에 적용된 basis값을 적용
+margin : 각 section 적용된 padding /2 값 적용
+background : 흰색으로 통일
+
+
+*/
+$section :(
+    header : (
+        basis : 30%,
+        padding : 20px,
+        background-color:gray
+    ),
+    main : (
+        basis : 50%,
+        padding : 30px,
+        background-color:lightgray
+    ),
+    side : (
+        basis : 20%,
+        padding : 10px,
+        background-color:black
+    ),
+    footer : (
+        basis : 10%,
+        padding : 20px,
+        background-color:gray
+    ),
+
+
+);
+
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@each $key, $value in $section{
+    .section-#{$key}{
+        background-color: map-get($value, background-color);
+
+        .inner{
+            flex-basis: map-get($value, basis );
+            margin: 0px map-get($value, padding) / 2;
+            padding: map-get($value , padding ) 0px;
+            background: #ffffff;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shrink</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /*
+        shrink 는 item들이 유연하게 줄어드는 비율을 의미
+        컨테이너의 너비가 부족해서 아이템이 축소될때 비율
+        shrink의 기본값은 1이며 값이 0일경우 축소하지 않으며
+        1외에 다른 값이 들어올 경우 비율대로 배분된다.
+        값이 클 경우 줄어드는 비중을 더 크게 가져간다.
+        */
+        .container{
+            display: flex;
+        }
+        .item{
+            flex-basis: 500px;
+        }
+        .item:nth-of-type(1){
+            flex-shrink: 3;
+        }
+        .item:nth-of-type(2){
+            flex-shrink: 2;
+        }
+        .item:nth-of-type(3){
+            flex-shrink: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Lorem.</div>
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">Lorem, ipsum dolor.</div>
+    </div>
+    
+</body>
+</html>

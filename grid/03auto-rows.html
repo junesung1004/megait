@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-auto-rows</title>
+    <style>
+        /*
+        grid-auto-rows, grid-auto-columns
+        아이템의 갯수를 알 수 없는 경우 횟수를 지정하지 않고 
+        영역으로만 알아서 처리할 때 사용
+
+        grid-auto-columns
+        열들이 명시적으로 템플릿에 지정되지 않았을때 너비를 지정
+        미리 지정된 것보다 많아질 경우 추가 열들의 너비를 어떻게 처리할지 정함
+        컨텐츠의 갯수가 동적으로 정해지거나 많이 포함하는 컨텐츠에 자주 사용
+
+        grid-auto-rows
+        행들이 명시적으로 정의되지 않았을때 높이를 지정
+        
+
+        */
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            display: grid;
+            background: coral;
+            padding: 10px;
+            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, minmax(100px, auto));
+            grid-auto-rows: minmax(50px, auto);
+
+        }
+        .item{
+            border: solid 3px black;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Expedita molestias earum laborum fugiat quas aliquid ea dicta, sint dolorem 
+            necessitatibus magnam. Optio laborum repellat, minima nulla nam provident 
+            commodi voluptas earum. Veniam assumenda inventore quis unde repellendus 
+            voluptatibus? Distinctio, laborum voluptatum. Unde quam minus molestias 
+            quasi accusantium, commodi itaque temporibus ipsam perspiciatis. 
+        </div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Expedita molestias earum laborum fugiat quas aliquid ea dicta, sint dolorem 
+            necessitatibus magnam. Optio laborum repellat, minima nulla nam provident 
+            commodi voluptas earum. Veniam assumenda inventore quis unde repellendus 
+            voluptatibus? Distinctio, laborum voluptatum. Unde quam minus molestias 
+            quasi accusantium, commodi itaque temporibus ipsam perspiciatis. 
+        </div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+    </div>
+</body>
+</html>

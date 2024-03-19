@@ -1,0 +1,38 @@
+/*
+each문
+
+map과 list를 반복하는 반복문의 종류
+
+for문과 each문의 차이점
+
+for문은 특정 시작과 끝의 기준점을 지정해줘야 한다.
+each문은 목록이나 맵의 항목을 자동으로 반복하는 반복문
+
+
+*/
+
+$color : 'coral', 'pink', 'lightblue', 'green','lime','orange','lightpink','yellow';
+$size : ('s1':20px, 's2':24px,'s3':28px, 's4':32px,'s5':36px,'s6':40px,'s7':42px,'s8':46px);
+
+p{
+    @each $colors in $color{
+        $i : index($color, $colors);
+        &:nth-of-type(#{$i}){
+            color: $colors;
+        }
+    }
+}
+p{
+    @each $key, $value in $size{
+        //each에서 map을 반복할때에는 앞에 있는 값은 무조건 key, 뒤에는 value
+        $sizes : map-values($size);
+        //맵 안에 있는 값들만 추출해서 새로운 변수에 리스트형식으로 넣어주는 과정
+        $i : index($sizes, $value);
+        &:nth-of-type(#{$i}){
+            font-size: $value
+        }
+        &.#{$key}{
+            font-size: $value
+        }
+    }
+}

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/*
+버튼 타입에 따른 다른 스타일 적용하는 mixin 제작
+
+버튼의 매개변수에 
+배경컬러, 폰트컬러, padding : 12px 24px; border : solid 1px transparent
+모든 버튼에 매개변수를 따로 지정하고 클래스에 따라 border-color만 따로 지정
+타입 종류 : submit : blue, cancle : lightgray, error : red
+*/
+.submit {
+  background: coral;
+  color: white;
+  padding: 12px 24px;
+  border: solid 1px transparent;
+  border-color: blue;
+}
+
+.cancle {
+  background: coral;
+  color: white;
+  padding: 12px 24px;
+  border: solid 1px transparent;
+  border-color: lightgray;
+}
+
+.error {
+  background: coral;
+  color: white;
+  padding: 12px 24px;
+  border: solid 1px transparent;
+  border-color: red;
+}

@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/*
+각 영역마다 다른 flex의 속성을 적용
+header : basis : 30%; , padding : 20px, background: gray
+main : basis : 50%, padding : 30px, background : lightgray
+side : basis : 20%, padding : 10px, background : black
+footer : basis : 10%, padding:20px, backgroound: gray
+
+inner에는 각 
+section 에 적용된 basis값을 적용
+margin : 각 section 적용된 padding /2 값 적용
+background : 흰색으로 통일
+
+
+*/
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-header {
+  background-color: gray;
+}
+.section-header .inner {
+  flex-basis: 30%;
+  margin: 0px 10px;
+  padding: 20px 0px;
+  background: #ffffff;
+}
+
+.section-main {
+  background-color: lightgray;
+}
+.section-main .inner {
+  flex-basis: 50%;
+  margin: 0px 15px;
+  padding: 30px 0px;
+  background: #ffffff;
+}
+
+.section-side {
+  background-color: black;
+}
+.section-side .inner {
+  flex-basis: 20%;
+  margin: 0px 5px;
+  padding: 10px 0px;
+  background: #ffffff;
+}
+
+.section-footer {
+  background-color: gray;
+}
+.section-footer .inner {
+  flex-basis: 10%;
+  margin: 0px 10px;
+  padding: 20px 0px;
+  background: #ffffff;
+}

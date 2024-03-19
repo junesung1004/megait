@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fixed position</title>
+    <style>
+        /*
+        fixed position
+        다른 position들은 위치값의 기준을 body를 기준으로 하지만,
+        fixed는 브라우저의 크기를 기준으로 한다.
+        화면 안에서 움직이지 않아야 하는 요소들을 고정할때 사용하거나,
+        스크립트에 의해서 포지션 값을 변경할 때 사용한다.
+        relative -> fixed 를 많이 사용
+
+        fixed가 들어간 다음 컨텐츠의 경우 fixed된 컨텐츠의 영역을 인식하지 못하므로 
+        겹쳐지는 현상이 생긴다.
+        여백으로 컨텐츠의 높이값만큼 띄어주는게 중요하다.
+        *position의 위치값으로 띄어줄 경우 다른 컨텐츠와 겹침 현상이 또 발생하기 때문에
+        레이아웃이 깨질 염려가 있다.
+        */
+        body,html{
+            height: 5000px;
+        }
+
+        .fix-content{
+            width: 100%;
+            height: 200px;
+            background: coral;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+        }
+
+        .main-content{
+            width: 100%;
+            height: 1000px;
+            background: pink;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            padding-top: 200px;
+        }
+        .main-content02{
+            width: 100%;
+            height: 500px;
+            background: green;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="fix-content">content</div>
+    <div class="main-content">main-content</div>
+    <div class="main-content02">main-content</div>
+</body>
+</html>

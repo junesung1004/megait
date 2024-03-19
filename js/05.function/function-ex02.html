@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        점수 계산하기
+        점수 계산하는 함수를 작성(function)
+
+        3개의 점수를 매개변수로 받아와서 3개의 점수 평균을 내서 학점을 내기
+
+        평균이 90점보다 같거나 높으면 A
+        평균이 80점보다 같거나 높으면 B
+        평균이 70점보다 같거나 높으면 C
+        평균이 60점보다 같거나 높으면 D
+        그 이하는 모두 F
+        */
+
+        function calculateGrade(score1, score2, score3){
+            let result = (score1 + score2 + score3) / 3
+
+            if(result >= 90){
+                return 'A학점'
+            }else if(result >= 80){
+                return 'B학점'
+            }else if(result >= 70){
+                return 'C학점'
+            }else if(result >= 60){
+                return 'D학점'
+            }else{
+                return 'F학점'
+            }
+        }
+        console.log(calculateGrade(90,95,93))
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

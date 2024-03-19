@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while문 예제02</title>
+    <script>
+        /*
+        1~10 랜덤한 숫자를 하나 출력()
+        랜덤한 숫자를 맞출때까지 prompt를 계속 출력
+        입력한 값이 정답보다 낮으면 down, 정답보다 높으면 up을 console에 출력
+        숫자를 맞추면 랜덤숫자의 정답과 실패 횟수를 출력
+    
+        
+        */
+
+        let randomNum = Math.floor((Math.random()*10)+1);//1~10사이의 값을 랜덤 출력
+        //console.log(randomNum)
+        let num; //사용자가 입력할 정답;
+        let falseCount = 0;//실패할 경우 카운팅 될 변수
+
+        while(num !== randomNum){
+            let input = prompt('1~10까지의 랜덤함 숫자를 입력하세요');
+            num = parseInt(input);
+            if(num === randomNum){
+                break
+            }
+            falseCount++;//while이 실행될 경우 나오는 카운트
+
+            if(num < randomNum){
+                console.log('up');
+            }else if(num > randomNum){
+                console.log('down');
+            }
+        }
+        document.write('축하드립니다. 정답은'+randomNum +'이며'+falseCount+'회 만에 성공했습니다.')
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

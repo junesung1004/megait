@@ -1,0 +1,51 @@
+/*
+ 문제
+ box선택자의 기본 가로사이즈는 100px이다.
+ box01부터 05까지 for문을 사용하여 width값 설정하기
+ 각 box는 20px씩 증가해야함
+
+ box의 순번이 짝수라면 배경컬러를 coral, 홀수라면 pink
+ 조건문 = 순번 % 2 == 0
+
+ 
+
+*/
+@mixin deprecated-mixin() {
+    @warn "This mixin is deprecated. Please use the new mixin instead.";
+    // 구식 스타일 정의
+  }
+  
+  // 사용 예
+  .deprecated-box {
+    @include deprecated-mixin(); // 경고 메시지를 출력하면서 컴파일을 계속 진행합니다.
+  }
+
+$widthSize : 100px;
+
+@for $i from 1 through 5{
+    .box0#{$i}{
+        width: $widthSize + ($i * 20px);
+        background: if($i % 2 == 0, coral, pink);
+    }
+}
+
+/*
+문제2
+기본 width,height 200px이다
+margin-bottom을 순번에 따라 15px씩 증가하지만 
+첫번째 요소에는 margin-bottom을 적용하지 않음
+홀수 순번에는 coral, 짝수는 pink
+
+
+*/
+
+$base-size : 200px;
+
+@for $i from 1 through 5{
+    .product0#{$i}{
+        width: $base-size;
+        height: $base-size;
+        margin-bottom: if($i == 1, 0, ($i - 1) *15px);
+        background: if($i % 2 == 1, coral, pink);
+    }
+}

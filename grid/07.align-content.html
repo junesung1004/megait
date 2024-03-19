@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        컨텐츠 정렬
+        align-content : 수직축
+        justify-items : 수평축
+        place-content : 그룹속성
+
+        -items : 셀 내부에 있는 item의 크기가 셀보다 작을 경우 내부에서 정렬하는 속성
+        -content : 전체 레이아웃에 있는 셀들을 모두 정렬하는 속성
+
+        normal : strecth와 같은 기본 속성
+        start :  시작(위쪽) 정렬
+        end : 끝점(아래쪽) 정렬
+        center : 가운데
+
+        -content에 속성
+        space-between : 컨텐츠 사이에 여백
+        -around : 컨텐츠 둘레에 여백 
+        -evenly : 둘레에 같은 여백 설정
+
+        */
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            display: grid;
+            height: 500px;
+            width: 1200px;
+            gap: 10px;
+            background: coral;
+            grid-template-columns: repeat(3,200px);
+            grid-template-rows: repeat(3,100px);
+            /*
+            align-items: end;
+            justify-items: end;
+
+            align-content: end;
+            justify-content: center;
+            */
+            place-content: center; /*align justify 순서이며 값이 하나라면 통일*/
+            place-items: center;/*align justify 순서이며 값이 하나라면 통일*/
+
+
+        }
+        .item{
+            width: 100px;
+            height: 50px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+    </div>
+</body>
+</html>

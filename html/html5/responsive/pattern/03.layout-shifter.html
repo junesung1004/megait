@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout-shifter</title>
+    <style>
+        /*
+        layout-shifter
+        레이아웃 쉬프터는 다양한 분기점에서 레이아웃에 있는 요소들을 재구성하거나
+        요소들을 이동시키거나 하는 가장 변화가 많이 일어나는 패턴
+        반응형 디자인 중에서 가장 유동성이 심하고 복잡한 변화를 제공하기 때문에 가장
+        높은 난이도를 가지고 있다.
+        배치 변경, 컨텐츠가 재정렬하는 경우도 많음
+
+        레이아웃을 포함해서 컨텐츠 내부에서 분기점을 따로 둬야 하는 경우도 있다.
+        컨텐츠 관리가 다른 패턴에 비해서 까다롭다.
+
+        */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0px auto;
+            padding: 12px;
+            box-sizing: border-box;
+            background: lightgray;
+        }
+
+        .h-container {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 12px;
+            background: gray;
+        }
+
+        .content {
+            width: 100%;
+            margin-bottom: 12px;
+            background: gray;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+
+        .f-container {
+            width: 100%;
+            height: 150px;
+            background: gray;
+        }
+
+        /*content*/
+        .content01 {
+            width: 30%;
+            height: 300px;
+            padding: 6px;
+            box-sizing: border-box;
+            background: pink;
+            float: left;
+            margin-right: 1%;
+        }
+
+        /*content02*/
+        .content02 {
+            width: 69%;
+            float: left;
+            background: pink;
+            margin-bottom: 10px;
+        }
+
+        .content02>div {
+            width: 49%;
+            height: 145px;
+            float: left;
+            background: lightpink;
+        }
+
+        .content02>.content02-1 {
+            margin-right: 2%;
+        }
+
+        /*content03*/
+        .content03 {
+            width: 69%;
+            background: pink;
+            float: left;
+        }
+        .content03 > div{
+            width: 49%;
+            float: left;
+            background: lightpink;
+            height: 145px;
+        }
+        .content03 .content03-1{
+            margin-right: 2%;
+        }
+
+        /*content04*/
+        .content04{
+            width: 100%;
+            height: 300px;
+            background: pink;
+            margin: 12px 0px;
+            float : left;
+        }
+        /*content05*/
+        .content05{
+            width: 100%;
+            float: left;
+            background: pink;
+        }
+        .content05 > div{
+            height: 300px;
+            float: left;
+            background: lightpink;
+        }
+        .content05 > .content05-1{
+            width: 49%;
+            margin-right: 1%;
+        }
+        .content05 > .content05-2{
+            width: 24.5%;
+            margin-right: 1%;
+        }
+        .content05 > .content05-3{
+            width: 24.5%;
+        }
+
+        /*미디어 쿼리*/
+        @media screen and (max-width:1024px){
+            .content02 > div{
+                height: 300px;
+            }
+            .content03{
+                width: 100%;
+            }
+        }
+        @media screen and (max-width : 768px){
+            .content01{
+                width: 49%;
+                margin-right: 1%;
+            }
+            .content02{
+                width: 50%;
+            }
+            .content02 > div{
+                width: 100%;
+                height: 145px;
+            }
+            .content02 > .content02-1{
+                margin-right: 0px;
+                margin-bottom: 10px;
+            }
+            .content03 > div{
+                width: 100%;
+                height: 200px;
+            }
+            .content03 .content03-1{
+                margin-right: 0px;
+                margin-bottom: 10px;
+            }
+            
+            .content05 > .content05-1,
+            .content05 > .content05-2,
+            .content05 > .content05-3{
+                margin-right: 0px;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .content05 > .content05-2,
+            .content05 > .content05-3{
+                height: 200px;
+            }
+            .content05 > .content05-3{
+                margin-bottom: 0px;
+            }
+        }
+
+        @media screen and (max-width:480px){
+            .content01,
+            .content02{
+                width: 100%;
+            }
+            .content01{
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="h-container">header</header>
+        <main class="content clearfix">
+            <div class="content01">content01</div>
+            <div class="content02 clearfix">
+                <div class="content02-1">content02-1</div>
+                <div class="content02-2">content02-2</div>
+            </div><!--content02-->
+
+            <div class="content03 clearfix">
+                <div class="content03-1">content03-1</div>
+                <div class="content03-2">content03-2</div>
+            </div><!--cotnent03-->
+            <div class="content04">content04</div>
+            <div class="content05 clearfix">
+                <div class="content05-1">content05-1</div>
+                <div class="content05-2">content05-2</div>
+                <div class="content05-3">content05-3</div>
+            </div><!--cotnent05-->
+        </main>
+        <footer class="f-container">footer</footer>
+    </div>
+</body>
+
+</html>

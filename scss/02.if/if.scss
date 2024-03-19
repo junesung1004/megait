@@ -1,0 +1,50 @@
+/*
+조건문 if문
+
+작성방식
+
+1. 축약방식
+if(조건문, true일때 값, false일때 값)
+주로 속성 값 내에서 간단한 조건에 따라 다른값을 반환해야 할때 사용
+
+2. 비축약방식
+여러 조건에 따라 다른 값이 반환되어야 할때
+
+if 조건문{조건문을 만족할 때 값}@else if 조건문{조건을 만족할때 값}@else if 조건문{조건을 만족할때 값}
+
+비교문
+a > b = a가 b보다 크다
+a < b = a가 b보다 작다
+a <= b = a가 b보다 작거나 같다
+a = b = a는 b다
+a == b = a는 b와 같다
+*/
+
+$importance : 'high';
+
+// .title{
+//     font-size: if($importance == 'high', 30px, if($importance == 'medium', 20px, 14px));
+//     font-weight : if($importance =='high', bold , normal)
+    
+// }
+
+p{
+    $titleType : 'title';
+    @if $titleType == 'title'{
+        font-size: 30px;
+        color : #333333;
+        font-weight: bold;
+    }@else if $titleType == 'subTitle'{
+        font-size: 20px;
+        color: #666666;
+        font-weight: bold;
+    }@else if $titleType == 'text'{
+        font-size: 14px;
+        color: #999999;
+        font-weight: normal;
+    }@else{
+        font-size: 14px;
+        color: coral;
+        font-weight: normal;
+    }
+}

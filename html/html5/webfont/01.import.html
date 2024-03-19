@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일 연결 방법</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+        /*
+        파일을 연결할때에는 두 가지 방법으로 연결할 수 있다.
+        링크방식과 import방식으로 연결 할 수 있다.
+
+        import
+        -장점 : css내부에서 선언하기 때문에 문서가 가독성이 높아진다.
+        -단점 : 로딩시간이 길어짐(브라우저가 css파일을 다운로드 후에 import를 인식하고
+        다운하는 방식)
+        import는 직렬방식의 로드를 사용하고 있다.
+        적은 수의 파일을 연결할 경우 이점이 생김
+
+        link(권장)
+        -장점 : 병렬방식으로 채택하기 때문에 한번에 많은 파일을 로드할 수 있다.
+        -단점 : head에 link를 하나하나 걸어줘야 하기 때문에 가독성이 떨어질 수 있다.
+        많은 파일을 로드할때 이점이 생김
+        
+        
+        */
+         p {
+            font-family: "Nanum Pen Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet.</p>
+</body>
+
+</html>

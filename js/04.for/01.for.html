@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for 반복문</title>
+    <script>
+        /*
+        반복문
+        초기값을 먼저 설정 후에 조건을 만족하는 동안 코드를 반복해서 실행하는 구문
+
+        작성방법
+        for(초기값; 조건식; 증감식){조건을 만족하는 동안 실행할 코드블록}
+
+        for문 작동방식
+
+        초기식 실행 -> 조건식 평가 -> 코드블록 실행 -> 증감식 실행
+
+        반복문에서 가장 중요할 것은
+        종료되는 시점을 설정해주는게 가장 중요하다.
+        종료되는 시점이 없거나 연산할 수 없는 조건이라면 무한루프에 빠지게 되므로 주의
+
+        */
+
+        for(let i = 0; i <= 5; i++){
+            document.write(i + '<br>');
+        };
+
+        for(let i = 0; i <= 10; i = i+2){
+            document.write(i + '<br>');
+        }//단순 증감식이 아닌 특정 숫자를 대입해서 증감식에 설정할 수도 있다.
+
+        for(let i = 0; i < 5; i++){
+            for(let j = 0; j < 5; j++){
+                document.write('i:'+i, 'j:'+j+'<br>');
+            };
+        }//for문안에 for문을 반복하는 중첩 for문도 작성 가능하다(초기값 변수명 중복 주의)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        생성자 함수를 이용해서
+        학생을 새로 생성한 다음에 국어, 영어,수학 점수의 평균을 구하기
+        
+        */
+        function Score(name, kor, eng, math){
+            this.name = name,
+            this.kor = kor,
+            this.eng = eng,
+            this.math = math,
+
+            document.write(name + ': 평균 점수는' + (kor + eng + math) / 3 + '입니다.');
+        }
+        let student01 = new Score('kim', 66,80,71);
+        let student02 = new Score('park',17,88,54)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

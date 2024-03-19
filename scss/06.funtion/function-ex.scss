@@ -1,0 +1,65 @@
+/*
+버튼 요소 만들기
+
+사이즈별로 다른 스타일의 버튼을 생성
+
+1. map형태로 size마다 적용할 padding을 정의
+large : 20px 40px;
+medium : 16px 32px;
+small : 12px 24px;
+
+2. function 으로 size마다 적용할 font-size를 정의(if)
+large : 16px
+medium : 14px
+small : 12px
+@if 조건 {@return}
+
+3. mixin으로 공통으로 적용할 버튼 스타일과 
+function에서 폰트 사이즈 가져와서 적용
+map에서 padding값 가져와서 적용
+border : none
+border-radius : 5px;
+cursor : pointer
+transition : 500ms
+background-color : lightgray;
+opacity : 0.7
+
+4. hover이벤트 적용 opacity : 1로 변경하기
+
+5. each문으로 각각의 클래스에 스타일 include로 적용하기
+*/
+$size :('large':20px 40px, 'medium': 16px 32px, 'small': 12px 24px);
+
+@function calc-font-size($key) {
+    @if $key =='large' {
+        @return 16px;
+    }
+
+    @else if $key =='medium' {
+        @return 14px;
+    }
+
+    @else if $key =='small' {
+        @return 12px;
+    }
+}
+
+@mixin btn-style($btn-size) {
+    padding: map-get($size, $btn-size); //맵에서 padding값 가져오기
+    font-size: calc-font-size($btn-size);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 500ms;
+    background-color: lightgray;
+    opacity: 0.7;
+    &:hover{
+        opacity: 1;
+    }
+}
+
+@each $key, $value in $size{
+    .#{$key}{
+        @include btn-style($key)
+    }
+}

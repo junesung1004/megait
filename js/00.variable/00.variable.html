@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        변수
+        =특정한 이름으로 만들어진 저장소
+        저장소에는 임의의 데이터값을 넣어서 수시로 그 데이터를 사용할 수 있도록 하는
+        명령어
+
+        기존에는 var라는 변수명을 사용했지만
+        최근(ECMAscript2016)에는 let과 const라는 새로운 변수의 종류가 추가되었다.
+
+        var = 재선언이 가능, 값의 변경도 가능한 변수
+
+        let = 재선언은 불가능, 값의 변경은 가능한 변수
+        const = 재선언도 불가능, 값의 변경도 불가능한 '상수'변수
+
+        let과 const에 재선언을 막는 이유는 가독성과 안정성에 이유로 막고 있다.
+
+        
+        */
+
+        var a = 1;//값의 할당과 선언
+        var a = 2; //변수의 재 선언
+        a = 3; //값의 재 할당
+        console.log(a)
+
+        let b = 4;
+        //let b = 5;//Uncaught SyntaxError: Identifier 'b' has already been declared
+        b = 5;
+        console.log(b)
+
+        const c = 6;
+        //const c = 10;//Uncaught SyntaxError: Identifier 'c' has already been declared
+        //c = 11;//Uncaught TypeError: Assignment to constant variable.
+        console.log(c);
+
+
+        console.log(f);
+        var f = 11;
+
+        //console.log(g)//Uncaught ReferenceError: Cannot access 'g' before initialization
+        let g = 1;
+
+        /*변수 호이스팅
+        변수를 선언하기 전에 변수를 참조하는 현상
+
+        변수는 3단계를 거쳐 선언된다.(var,let,const 동일)
+        1. 선언
+        -변수의 실행 / 변수에 등록하는 과정
+
+        2.초기화
+        -변수명 안에 값이 들어갈 공간을 만들기 위해 영역을 확보하는 과정
+        이 단계에서 undefined가 출력됨
+
+        3. 값의 할당
+        undefined로 초기화 된 변수명에 값을 할당하는 과정
+
+        var는 1번과 2번을 동시에 실행
+        변수를 등록하고 공간을 확보하기 위해 undefined로 초기화 하기 때문에
+        변수가 선언되기 전에 값을 참조해도 에러가 발생하지 않지만 undefined를 출력
+        그 후에 값이 할당
+
+        var로 선언된 변수는 호이스팅이 되어서 선언이 스코프 최상단으로 올라가게 된다.
+        그래서 선언전에 변수를 참조할 수 있게 된다.
+
+        let과 const도 호이스팅 되는 현상이 있지만 초기화되지 않은 상태이기 떼문에
+        접근 시 에러를 발생시킴(tdz, 일시적 사각지대)
+
+        보통 const로 선언하는 경우가 많으며(값이 바뀌는 경우가 많이 없음)
+        추후에 let으로 변경하는 것이 좋다.
+
+        변수명 지을때에는 목적에 맞는 네이밍으로 한다.
+        과도한 줄임말 자제(차라리 긴 문장이 낫다.);
+        직관적인 단어를 조합해서 사용
+
+        let으로 변수명으로 선언할때에는 카멜기법(redColor);
+        const로 선언할때에는 언더바와 대문자 (RED_COLOR);
+        위 예시는 하나의 지표일뿐 회사나 사람마다 스타일이 다르기 때문에 꼭 지킬 필요는 없다.
+        
+        */
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

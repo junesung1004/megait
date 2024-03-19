@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 만들어보기</title>
+    <style>
+        /*테이블 기본 스타일 리셋*/
+        table{
+            border-spacing: 0px;
+            border-collapse: collapse;
+        }
+        /*태그 기본 스타일 리셋
+        태그들은 기본적으로 목적에 맞는 스타일을 가지고 생성이 되기 때문에 디자인에 맞추기
+        위해서는 모두 리셋하고 시작하는 것이 좋다.
+        그중에서 제일 많이 가지고 있는 스타일은 margin, padding같은 여백 속성이다.
+        */
+
+        body, html, table, caption, tr, th, td{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .board{
+            width: 1200px;
+            margin: 50px auto;/*컨텐츠 좌우 가운데 정렬 방법*/
+        }
+        /*사용자 커스텀*/
+        th{
+            border-top: solid 1px black;
+            border-bottom: solid 1px #bbbbbb;
+            padding: 12px 0px;
+        }
+        td{
+            border-bottom: solid 1px #bbbbbb;
+            padding: 8px 0px;
+        }
+
+        caption{
+            font-size: 30px;
+            margin-bottom: 24px;
+            text-align: left;
+            /*텍스트 정렬 방법 center, left, right, justfy*/
+        }
+        .number{
+            width: 150px;
+        }
+        .title{
+            width: 700px;
+        }
+        .name{
+            width : 150px;
+        }
+        .date{
+            width: 100px;
+        }
+        .like{
+            width: 100px;
+        }
+
+        td{
+            text-align : center;
+        }
+
+        td.title{
+            text-align: left;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+    <table class="board">
+        <caption>자유 게시판</caption><!--테이블 제목-->
+
+        <tr>
+            <th class="number">No</th>
+            <th class="title">제목</th>
+            <th class="name">글쓴이</th>
+            <th class="date">작성시간</th>
+            <th class="like">좋아요</th>
+        </tr>
+
+        <tr>
+            <td class="number">1</td>
+            <td class="title">컨텐츠 제목</td>
+            <td class="name">홍길동</td>
+            <td class="date">2024-02-19</td>
+            <td class="like">2</td>
+        </tr>
+        <tr>
+            <td class="number">1</td>
+            <td class="title">컨텐츠 제목</td>
+            <td class="name">홍길동</td>
+            <td class="date">2024-02-19</td>
+            <td class="like">2</td>
+        </tr>
+        <tr>
+            <td class="number">1</td>
+            <td class="title">컨텐츠 제목</td>
+            <td class="name">홍길동</td>
+            <td class="date">2024-02-19</td>
+            <td class="like">2</td>
+        </tr>
+        <tr>
+            <td class="number">1</td>
+            <td class="title">컨텐츠 제목</td>
+            <td class="name">홍길동</td>
+            <td class="date">2024-02-19</td>
+            <td class="like">2</td>
+        </tr>
+        <tr>
+            <td class="number">1</td>
+            <td class="title">컨텐츠 제목</td>
+            <td class="name">홍길동</td>
+            <td class="date">2024-02-19</td>
+            <td class="like">2</td>
+        </tr>
+        <tr>
+            <td class="number">1</td>
+            <td class="title">컨텐츠 제목</td>
+            <td class="name">홍길동</td>
+            <td class="date">2024-02-19</td>
+            <td class="like">2</td>
+        </tr>
+
+
+    </table>
+</body>
+</html>

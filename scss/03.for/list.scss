@@ -1,0 +1,39 @@
+/*
+리스트 
+여러개의 값을 하나의 변수에 저장하는 방법
+
+문법 : 
+$변수명 : 값1, 값2, 값3.....
+$변수명 : 값1 값2 값3....
+$변수명 : (값1, 값2, 값3...)
+*/
+$list-item : 'apple', 'orange', 'lemon';
+$color-list : 'red', 'orange', 'yellow';
+
+p{
+    background: index($list-item, 'orange');
+    //index : 리스트 안에 있는 특정 값의 순번을 호출 index(리스트명, 순번의 이름)
+    //특정 값의 순번을 반환 순번은 1번부터 시작
+    background : length($list-item) ;
+    //length : 리스트 안에 있는 값의 갯수를 호출
+    background : nth($list-item, 2);
+    //nth : 리스트 안에 있는 특정 순번에 있는 값을 호출(index 반대)
+    //순번은 1번부터 시작
+    background : set-nth($list-item, 2 , 'melon' );
+    //특정 순번에 있는 값을 바꿔서 리스트를 반환함
+    background : zip($color-list, $list-item)
+    //여러개의 리스트를 하나의 리스트로 병합
+    //앞에 있는 리스트명에 뒤에 있는 리스트명의 값이 합쳐지는 방식
+}
+
+$font-size : 10px, 12px, 14px, 16px, 18px, 20px, 22px;
+
+@for $i from 1 through length($font-size){
+    $font : nth($font-size, $i);
+    $class : font-size-#{$font};
+
+    .#{$class}{
+        font-size: $font;
+        line-height: $font * 1.5;
+    }
+}

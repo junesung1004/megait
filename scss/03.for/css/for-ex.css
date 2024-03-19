@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/*
+ 문제
+ box선택자의 기본 가로사이즈는 100px이다.
+ box01부터 05까지 for문을 사용하여 width값 설정하기
+ 각 box는 20px씩 증가해야함
+
+ box의 순번이 짝수라면 배경컬러를 coral, 홀수라면 pink
+ 조건문 = 순번 % 2 == 0
+
+
+
+*/
+.box01 {
+  width: 120px;
+  background: pink;
+}
+
+.box02 {
+  width: 140px;
+  background: coral;
+}
+
+.box03 {
+  width: 160px;
+  background: pink;
+}
+
+.box04 {
+  width: 180px;
+  background: coral;
+}
+
+.box05 {
+  width: 200px;
+  background: pink;
+}
+
+/*
+문제2
+기본 width,height 200px이다
+margin-bottom을 순번에 따라 15px씩 증가하지만 
+첫번째 요소에는 margin-bottom을 적용하지 않음
+홀수 순번에는 coral, 짝수는 pink
+
+
+*/
+.product01 {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 0;
+  background: coral;
+}
+
+.product02 {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 15px;
+  background: pink;
+}
+
+.product03 {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 30px;
+  background: coral;
+}
+
+.product04 {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 45px;
+  background: pink;
+}
+
+.product05 {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 60px;
+  background: coral;
+}

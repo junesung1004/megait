@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이블 속성</title>
+</head>
+<body>
+    <!-- label태그
+    form요소 내에서 입력 도구와 텍스트를 연결해주는 태그
+    웹 표준과 접근성을 준수하기 위해서는 기본적으로 label을 사용해서 작성하는 것이 좋다.
+
+    1. 명시적 작성 방식
+        -id와 for를 사용해서 label을 연결해주는 방식
+        -시인성이 좋음
+        -서로 떨어져 있어도 연결될 수 있다.
+
+    2. 암시적 작성 방식
+        -id와 for를 사용하지 않고 label안에 입력태그와 텍스를 한번에 넣는 방식
+        -작성법은 편하지만 시인성은 떨어짐
+        -오래된 기기나 버전에서는 암시적 작성방식을 인식하지 못하는 경우가 있다.
+
+    -->
+
+
+    <!-- 명시적 작성방식 -->
+    <input type="radio" id="btns">
+    <label for="btns">동의 버튼</label>
+
+    <!-- 암시적 작성 방식 -->
+    <label>
+        <input type="radio">동의
+    </label>
+
+</body>
+</html>

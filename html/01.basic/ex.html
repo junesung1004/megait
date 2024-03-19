@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 문제</title>
+    <!--
+        1. 모든 span태그에 font-size를 20주기
+        2. p태그 안에 있는 모든 span태그에 배경컬러 coral주기
+        3. p태그 안에 있는 bg-color에는 green 컬러 주기
+        4. div안에 있는 bg-color에는 pink컬러 주기
+    -->
+    <style>
+        span{
+            font-size : 20px
+        }
+        p span{
+            background-color: coral;
+        }
+        p .bg-color{
+            background-color: green;
+        }
+        div >.bg-color{
+            background-color: pink;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>
+            <span>Lorem ipsum dolor sit amet.</span>
+            <span class="bg-color">Lorem ipsum dolor sit amet.</span>
+        </p>
+        <div>
+            <span class="bg-color">Lorem ipsum dolor sit amet.</span>
+        </div>
+    </div>
+    
+</body>
+
+</html>

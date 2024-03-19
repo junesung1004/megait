@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /*
+        flex가 적용되면 정렬방향에 따라 메인축과 상대축으로 나눠진다.
+        컨텐츠가 정렬되는 방향 - 메인축
+        반대 - 상대축
+
+        row : x축(가로축) 왼쪽부터 오른쪽으로 진행(기본값)
+        -reverse : 오른쪽부터 왼쪽으로 컨텐츠 진행
+
+        column : y축(세로축) 위에서부터 아래로 진행
+        -reverse : 아래에서 위로 컨텐츠 진행
+        */
+        .container{
+            display: flex;
+            flex-direction: column
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Lorem.</div>
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">Lorem, ipsum dolor.</div>
+    </div>
+    
+</body>
+</html>

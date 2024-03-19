@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>justify-content</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /*
+        justify-content
+        justify - 메인축
+        align - 상대축
+
+        flex는 direction에 따라 축이 바뀌기 때문에 지정된 방향이 없다.
+
+        start : 기본값 row일때 왼쪽 column일때 위
+        end : 자식요소들을 축의 끝으로 이동(위치만 바뀜 , 진행방향은 똑같음)
+
+        space-around : item의 '둘레' 에 균일한 간격을 배분(마주보는 컨텐츠는 여백이 증가)
+        -bwtween : item '사이'에 균일한 간격을 배분
+        -evenly : item들에 '균일'한 간격을 배분(마주보는 컨텐츠도 일정한 여백)
+
+        
+        */
+        .container{
+            display: flex;
+            justify-content: space-evenly
+         
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Lorem.</div>
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">Lorem, ipsum dolor.</div>
+      
+    </div>
+    
+</body>
+</html>

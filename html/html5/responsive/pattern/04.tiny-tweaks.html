@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tiny tweaks</title>
+    <style>
+        /*
+        tiny tweaks 작은 변화
+        다른 패턴들과 다르게 레이아웃의 변화는 거의 없다.
+        간단한 레이아웃의 사이트에서 쓰이며, 복잡한 레이아웃에서는 사용하기 어렵다.
+
+        레이아웃의 변화는 없지만 텍스트의 크기, 이미지의 크기가 디바이스의 크기에 비례해서
+        변화되는 정도가 끝
+
+        레이아웃이 거의 없는 원페이지형 레이아웃, 블로그형 레이아웃에 적합
+        */
+
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body,html{
+            font-size: 0.5208333333333333vw;/*10px*/
+            /*
+            비율 구하는 공식
+            기준 폰트사이즈 / 기준 화면 비율(width값 기준) 
+            
+            */
+        }
+        h2{
+            font-size: 12rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+</body>
+</html>

@@ -1,0 +1,167 @@
+body{
+    font-family: "Noto Sans KR", sans-serif;
+}
+/*공용 css*/
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.content-inner{
+    width : 1000px;
+    margin: 0px auto;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+}
+
+/**/
+
+.h-container{
+    width: 100%;
+    height: 50px;
+    border-bottom: solid 1px #ffffff;
+    background: darkgreen;
+}
+
+.logo{
+    width: 200px;
+    height: 100%;
+    background: lightgray;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0px;
+}
+.h-sns-menu{
+    width: 100px;
+    height: 50px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: lightgray;
+}
+.h-sub-menu{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: lightgray;
+}
+
+.gnb-container{
+    width: 100%;
+    height: 50px;
+    background: darkgreen; 
+}
+.gnb-container ul li{
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+.gnb-container ul li a{
+    color: #ffffff;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/*main*/
+.main-container{
+    width: 100%;
+    background: blanchedalmond;
+}
+.visual{
+    width: 100%;
+    height: 500px;
+    background: lightgray;
+}
+.main-container > .content-inner{
+    padding: 30px 0px 90px;
+}
+.banner-wrapper, .store-wrapper, .board-wrapper{
+    width: 100%;
+    margin-bottom: 24px;
+}
+.banner-left{
+    float: left;
+    width: 394px;
+}
+.slider-item{
+    width: 100%;
+    height: 400px;
+    background: lightgray;
+    margin-bottom: 12px;
+}
+.delevery{
+    width: 100%;
+    height: 200px;
+    background: lightgray;
+}
+
+.banner-right{
+    width: 594px;
+    float: right;
+}
+.pick-item{
+    width: 100%;
+    height: 400px;
+    background: lightgray;
+    margin-bottom: 12px;
+}
+.banner-ad{
+    width: 100%;
+    height: 200px;
+    background: lightgray;
+}
+
+/*store*/
+.local{
+    width: 594px;
+    height: 300px;
+    background: lightgray;
+    float: left;
+}
+.event{
+    width: 394px;
+    height: 300px;
+    background: lightgray;
+    float: right;
+}
+
+/*board*/
+.franchise{
+    width: 291px;
+    height: 200px;
+    background: lightgray;
+    float: left;
+}
+.empoly{
+    width: 291px;
+    height: 200px;
+    background: lightgray;
+    margin: 0px 12px;
+    float: left;
+}
+.notice{
+    width: 394px;
+    height: 200px;
+    background: lightgray;
+    float: left;
+
+}
+
+/*ad*/
+.ad{
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    position: absolute;
+    top: 0px;
+    right: -70px;
+}

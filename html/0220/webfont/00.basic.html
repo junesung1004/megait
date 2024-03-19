@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹폰트</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        /*
+        html5 / css3
+        -사용성이 상승
+        -멀티미디어 요소 추가(애니메이션, 동영상, 웹폰트)
+        -시멘틱 태그에 맞춘 태그가 추가
+        */
+
+        /*
+         웹폰트
+         -기존에 사이트는 폰트를 지정해서 사용할 수 없었다(기본폰트만 사용)
+         기본폰트외 다른 폰트를 사용할려면 이미지화 해서 사용하는 방법밖에 없기 때문에
+         사이트가 복잡해지고 해상도에 호환되지 않는 문제들이 많았다.
+
+         직접 폰트를 서버에 업로드하거나 웹폰트를 제공하는 사이트에서 소스를 빌려오는
+         방법으로 사용할 수 있다.
+
+         폰트를 가지고 있지 않아서 외부 사이트에서 연동할때 
+         -구글 폰트
+         
+         구글 폰트를 사용하지 못하는 경우
+         -인터넷 회선 문제
+         -지역 문제(국가별로 구글을 사용하지 못하는 곳이 있다.)
+         -브라우저 호환(하위버전에서는 웹폰트가 적용되지 않는다.)
+         -웹폰트 차단(회사, 단체에서 개인정보 보호때문에 외부 소스를 차단하는 경우)
+        */
+        p {
+            font-family: "Nanum Pen Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>안녕하세요? 웹 폰트 적용 방법입니다.</p>
+</body>
+
+</html>

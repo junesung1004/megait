@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>column drop</title>
+    <style>
+        /*column drop(열드랍 방식)
+        큰 화면에서 여러개의 컨텐츠가 좌우로 나란히 정렬되어 있다가 화면의 크기가 줄어듬에
+        따라 차츰 아래로 떨어져서 수직으로 쌓이는 방식
+
+        mostly-fluid와 수직으로 쌓인다는 점은 같지만 
+        컨텐츠를 생략하지 않는다는 차이가 있다.
+        컨텐츠를 생략하지 않고 모든 정보를 보여주되 화면 크기에 맞춰서 재배치를 한다.
+
+        분기점은 보통 컨텐츠가 레이아웃을 버티지 못하는 구간을 분기점으로 잡는다.
+        
+        */
+
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .container{
+            width: 100%;
+            max-width:1200px;
+            padding: 12px;
+            box-sizing: border-box;
+            margin: 0px auto;
+            background: lightgray;
+        }
+        .container > div{
+            float: left;
+        }
+        .content01{
+            width: 58%;
+            margin-right: 2%;
+            background: lightpink;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+
+        .content01 > div{
+            width: 25%;
+            height: 300px;
+            background: lightcyan;
+            float: left;
+        }
+
+        .content02{
+            width: 18%;
+            height: 300px;
+            background: lightpink;
+            margin-right: 2%;
+        }
+        .content03{
+            width:20%;
+            height: 300px;
+            background: lightpink;
+        }
+
+
+        @media screen and (max-width:1024px){
+            .content01,
+            .content02,
+            .content03{
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        @media screen and (max-width : 768px){
+            .content01 > div{
+                width: 50%;
+            }
+        }
+        @media screen and (max-width : 600px){
+            .content01 > div{
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .content01 > .content01-4{
+                margin-bottom: 0px;
+            }
+        }
+
+        
+        
+
+    </style>
+</head>
+<body>
+    <div class="container clearfix">
+        <div class="content01 clearfix">
+            <div class="content01-1">content01-1</div>
+            <div class="content01-2">content01-2</div>
+            <div class="content01-3">content01-3</div>
+            <div class="content01-4">content01-4</div>
+        </div><!--content01-->
+
+        <div class="content02">content02</div>
+        <div class="content03">content03</div>
+    </div><!--container-->
+</body>
+</html>

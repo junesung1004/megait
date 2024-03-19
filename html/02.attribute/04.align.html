@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컨텐츠 정렬하기</title>
+    <style>
+        /*
+        컨텐츠 정렬하는 방법
+        요즘은 flex로 정렬하지만 flex를 사용하지 못하는 곳에서는 기존의 
+        방법으로 대체해야 한다.
+
+        *컨텐츠를 만들때 높이값 설정
+        '정상적인 flow를 유지하는 컨텐츠의 경우' 부모요소는 자동으로 자식요소의 값을 
+        받아오도록 height 의 값이 auto로 기본값이 되어 있다.
+        자식요소의 길이에 따라 늘어나거나 줄어든다.
+
+        height에 값이 들어갈 경우 고정값이 되므로 자식요소의 길이를 받아오지 않는다.
+        보통 컨텐츠를 작성할때에는 부모요소의 height는 생략하고 작성하는 것이 편한다.
+
+        1. inline-block
+        장점 : 간단하게 정렬이 가능
+        단점 : 컨텐츠 사이에 지정되지 않은 여백이 들어가 있어서 이에 대한 대응 필요(개행여백)
+
+        개행문자 태그와 태그사이에 엔터를 쳤을때 나오는 공백이 화면에 출력되는 현상
+        해결방법은 inline-block이 적용된 부모요소에 font-size를 0으로 설정하여 리셋하는 방법
+
+
+        2. float로 정렬하는 방법
+        장점 :간단함
+        단점 : float속성은 객체를 따로 띄워서 정렬하는 속성이기 때문에 부모요소가 자식요소의
+        높이값을 받아오지 못함
+
+        해결방법 : 부모요소에 높이값을 직접 지정하는 방법 (유동성이 사라짐)
+        부모요소에 overflow:hidden 속성을 넣어주기
+
+
+        */
+        .align01{
+            width: 400px;
+            padding: 12px;
+            background: pink;
+            margin-bottom: 12px;
+            font-size: 0px;
+        }
+        .align01 .item{
+            width: 50px;
+            height: 50px;
+            background: coral;
+            display: inline-block;
+            font-size : 12px
+        }
+
+        .align02{
+            width: 500px;
+            padding: 12px;  
+        }
+        .align02 .item{
+            width: 100px;
+            height: 200px;
+            background: coral;
+            float: left;
+        }
+
+        .box{
+            width: 1000px;
+            height: 1000px;
+            background: gray;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="align01">
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+    </div>
+
+    <div class="align02">
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+    </div>
+
+    <div class="box">bocx</div>
+
+
+</body>
+</html>

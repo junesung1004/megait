@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/*
+each문
+
+map과 list를 반복하는 반복문의 종류
+
+for문과 each문의 차이점
+
+for문은 특정 시작과 끝의 기준점을 지정해줘야 한다.
+each문은 목록이나 맵의 항목을 자동으로 반복하는 반복문
+
+
+*/
+p:nth-of-type(1) {
+  color: "coral";
+}
+p:nth-of-type(2) {
+  color: "pink";
+}
+p:nth-of-type(3) {
+  color: "lightblue";
+}
+p:nth-of-type(4) {
+  color: "green";
+}
+p:nth-of-type(5) {
+  color: "lime";
+}
+p:nth-of-type(6) {
+  color: "orange";
+}
+p:nth-of-type(7) {
+  color: "lightpink";
+}
+p:nth-of-type(8) {
+  color: "yellow";
+}
+
+p:nth-of-type(1) {
+  font-size: 20px;
+}
+p.s1 {
+  font-size: 20px;
+}
+p:nth-of-type(2) {
+  font-size: 24px;
+}
+p.s2 {
+  font-size: 24px;
+}
+p:nth-of-type(3) {
+  font-size: 28px;
+}
+p.s3 {
+  font-size: 28px;
+}
+p:nth-of-type(4) {
+  font-size: 32px;
+}
+p.s4 {
+  font-size: 32px;
+}
+p:nth-of-type(5) {
+  font-size: 36px;
+}
+p.s5 {
+  font-size: 36px;
+}
+p:nth-of-type(6) {
+  font-size: 40px;
+}
+p.s6 {
+  font-size: 40px;
+}
+p:nth-of-type(7) {
+  font-size: 42px;
+}
+p.s7 {
+  font-size: 42px;
+}
+p:nth-of-type(8) {
+  font-size: 46px;
+}
+p.s8 {
+  font-size: 46px;
+}

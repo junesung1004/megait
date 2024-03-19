@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex로 메뉴 만들기</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        .container{
+            width: 100%;
+            background: gray;
+            box-sizing: border-box;
+        }
+        .h-top{
+            width: 100%;
+            height: 100px;
+            background: black;
+            margin: 100px auto;
+        }
+        .h-container{
+            width: 1200px;
+            height: 100px;
+            background: lightgray;
+            margin: 0px auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 30px;
+            box-sizing: border-box;
+            margin-top: 100px;
+        }
+        h1{
+            width: 120px;
+            height: 40px;
+            background: gray;
+        }
+        .gnb{
+            height: 100%;
+        }
+        .gnb ul{
+            display: flex;
+            height: 100%;
+        }
+        .gnb ul li{
+            height: 100%;
+            padding: 0px 30px;
+        }
+        .gnb ul li a{
+            display: block;
+            height: 100%;
+            line-height: 100px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333333;
+        }
+        .gnb ul li a:after{
+            content: "";
+            display: block;
+            /*width: 0px;*/
+            width: 100%;
+            height: 6px;
+            background: orange;
+            /*margin: -6px auto 0px;*/
+            transition: 300ms;
+            transform: scaleX(0);
+        }
+        .gnb ul li:hover a:after{
+            /*width: 100%;*/
+            transform: scaleX(1);
+        }
+        .gnb ul li:hover a{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="h-top">htop</div>
+    <header class="h-container">
+        <h1>logo</h1>
+        <nav class="gnb">
+            <ul>
+                <li><a href="#">BRAND</a></li>
+                <li><a href="#">ESG</a></li>
+                <li><a href="#">MENU</a></li>
+                <li><a href="#">STORE</a></li>
+                <li><a href="#">EVENT</a></li>
+                <li><a href="#">FRANCHISE</a></li>
+                <li><a href="#">HANSOT</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+</body>
+</html>

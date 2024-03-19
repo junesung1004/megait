@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        /*
+        .parent{
+            background: gray;
+            padding-top: 10px;
+        }
+        .child{
+            background: black;
+            margin-top: 100px;
+            height: 100px;
+        }
+        */
+        .box{
+            width: 200px;
+            height: 100px;
+            background: pink;
+            margin-bottom: 30px;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background: coral;
+            margin-top: 50px;
+        }
+        /*
+        마진 상쇄 현상
+        블록 요소의 상단과 하단 마진이 서로 겹쳐서 한쪽의 마진만 적용되는 현상
+        css의 특징
+
+        1. 인접한 형제 요소간의 마진 상쇄
+        상단과 하단의 마진이 겹쳐지는 부분이 생기면 두 마진중 가장 큰 값만 적용된다.
+
+        2. 부모요소에 가장 인접한 자식요소의 마진 상쇄
+        부모요소에 패딩이나 영역이 없는 경우 자식요소에 마진이 들어가는 경우에 부모
+        요소의 마진으로 들어가는 현상
+        
+        */
+    </style>
+</head>
+<body>
+    
+    <!-- <div class="parent">
+        <div class="child"></div>
+    </div> -->
+
+    <div class="box">box</div>
+    <div class="box2">box</div>
+
+    
+</body>
+</html>

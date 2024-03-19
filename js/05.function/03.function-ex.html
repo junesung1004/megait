@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        구구단을 함수로 호출(사용자가 원하는 단수를 받아서 출력)
+        prompt
+        */
+        /*
+                function gugudan(count){
+                    for(let i = 1; i <= 9; i++){
+                        document.write(count + '*' + i + '=' + (count*i)+'<br>')
+                    };
+                };
+                gugudan(parseInt(prompt('단수를 입력하세요')));
+        */
+
+        function gugudan(count) {
+            let result = '';
+            for (let i = 1; i <= 9; i++) {
+                result += count + '*' + i + '=' + (count * i) + '<br>';
+
+                
+            }
+            ressult += '</ul>'
+            return result;
+        }
+
+        document.write(gugudan(parseInt(prompt('단수를 입력하세요'))));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/*
+map 
+리스트의 한 종류 list는 값만 들어갈 수 있지만
+map은 key 와 value값을 같이 가진다.
+
+$변수명 : 값1,값2,값3....리스트방식
+$변수명 :(속성1 : 값1, 속성2:값2.....) 맵 방식
+
+
+*/
+p {
+  background: brown;
+  background: "coffee", "tea", "drink";
+  background: brown, green, orange;
+  background: "coffee", "tea", "drink", "fanta", "milk";
+  background: "tea", "drink", "fanta";
+}
+
+.item1 {
+  color: coral;
+  border: solid 2px #333333;
+  background: lightcoral;
+}
+
+.item2 {
+  color: cyan;
+  border: solid 1px #333333;
+  background: lightcyan;
+}
+
+.item3 {
+  color: green;
+  border: solid 3px #333333;
+  background: lightgreen;
+}

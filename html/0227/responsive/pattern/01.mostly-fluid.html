@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mostly fluid</title>
+    <style>
+        /*
+        유동형 레이아웃
+        비중을 많이 차지하는 레이아웃 형태
+        디자인을 새로 하지 않고 컨텐츠의 크기만 조절해서 아래로 떨어트리는 기법
+
+        컨텐츠의 중요도에 따라서 일부 컨텐츠가 생략되는 컨텐츠가 발생할 수도 있으며,
+        생략된 컨텐츠의 영역을 다른 컨텐츠가 차지하는 방식
+
+        다양한 화면의 크기에서 일관되고 쉽게 읽히는 것이 가장 큰 목적으로 보고 있다.
+
+        
+        */
+
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .container{
+            width: 100%;
+            max-width: 1200px;
+            background: gray;
+            margin: 0px auto;
+            padding: 12px;
+            box-sizing: border-box;
+        }
+        .content01{
+            width: 100%;
+            margin-bottom: 20px;
+            background: pink;
+        }
+        .content01 > div{
+            width: 50%;
+            height: 200px;
+            float: left;
+        }
+        .content01-1{
+            background: lightgreen;
+        }
+        .content01-2{
+            background: lightcyan;
+        }
+        .content02{
+            width: 100%;
+            margin-bottom: 20px;
+            background: coral;
+        }
+        .content02 > div{
+            width: 49%;
+            height: 250px;
+            float: left;
+        }
+        .content02-1{
+            background: lightcoral;
+            margin-right: 2%;
+        }
+        .content02-2{
+            background: lightskyblue;
+        }
+        .content03{
+            width: 100%;
+            height: 300px;
+            background: lightpink;
+        }
+        /*max-width로 최대값을 설정했기 때문에 분기점을 잡아서 100%로 할 필요는 없다.*/
+        @media screen and (max-width:1024px){
+            .content01-1{
+                display: none;
+            }
+            .content01 > .content01-2{
+                width: 100%;
+            }
+            .content02 > div{
+                width: 100%;
+            }
+            .content02 > .content02-1{
+                margin-right : 0px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="content01 clearfix">
+            <div class="content01-1">content01-1</div>
+            <div class="content01-2">content01-2</div>
+        </div><!--content01-->
+        <div class="content02 clearfix">
+            <div class="content02-1">content02-1</div>
+            <div class="content02-2">content02-2</div>
+        </div><!--content02-->
+        <div class="content03">content03</div>
+    </div><!--container-->
+</body>
+</html>

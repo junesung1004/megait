@@ -1,0 +1,15 @@
+body{
+    font-family: "Noto Sans KR", sans-serif;
+}
+/*공용 css*/
+.content-inner{
+    width : 1000px;
+    margin: 0px auto;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: auto;
+    background: gray;
+}
+
+/**/

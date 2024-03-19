@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비디오 반응형으로 변경</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px
+        }
+        .container{
+            width: 100%;
+            padding-bottom: 66.67%;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+        /*
+        container에는 height는 0으로 설정
+        padding-top으로 영역비율값 (동영상 사이즈즈 세로 / 가로)
+        padding-top, bottom모두 사용가능
+        position relative 설정
+
+        paddind-top-hack기법
+        
+        */
+        video{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+        }
+        .box{
+            width: 100%;
+            height: 100px;
+            background: gray;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <video src="./video/video.mp4" autoplay muted loop></video>
+    </div>
+    <div class="box"></div>
+</body>
+</html>

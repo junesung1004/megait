@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+
+    <style>
+        div {
+            background-color: pink;
+        }
+
+        .bg-color-blue {
+            background-color: blue;
+        }
+
+        p {
+            background-color: aqua;
+        }
+
+        div p {
+            background-color: burlywood;
+        }
+        p span{
+            font-size: 60px;
+        }
+
+        p > span{
+            background-color: aquamarine;
+            font-size: 30px;
+        }
+        div p+span{
+            background-color: brown;
+        }
+        div p~span{
+            background-color:blanchedalmond
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!--
+        선택자의 종류
+        * = 페이지 내의 모든 태그들을 지칭
+        페이지에 있는 모든 태그들을 순차적으로 스캔하기 때문에 과부하의 위험을 가지고 있다.
+        예전에는 reset의 용도로 사용했지만 지금은 거의 사용하지는 않는다.
+
+        태그선택자 = 태그명만 넣어서 선택하는 기본 선택자 방법
+
+        클래스 선택자 = 클래스명으로 선택자를 찾는 방법
+
+        아이디 선택자 = 아이디명으로 선택자를 찾는 방법
+
+        자손 선택자 종류
+
+        하위 선택자 = 선택자 선택자
+        앞에 작성된 선택자를 기준으로 하위에 있는 선택자를 '모두' 지칭
+
+        자식 선택자 = 선택자 > 선택자
+        앞에 작성된 선택자를 기준으로 자식 선택자만 선택
+
+
+        형제 선택자 
+
+        형제 인접 선택자 = 선택자+선택자 
+        앞에 작성된 선택자 다음에 오는 형제 선택자를 선택
+        ex)p+span p태그 바로 다음에 오는 span태그만 선택
+
+        일반 형제 선택자 = 선택자 ~ 선택자
+        앞에 작성된 선택자와 같은 부모요소에 있는 해당 형제 태그를 모두 선택
+        ex)p~span p태그 아래 있는 모든 span 형제들을 선택
+
+        선택자 점수로 선택자를 더 정확하게 지칭할 수 있다.
+        id[100점] > class[10점] > 태그[1점] > *[0점]
+
+
+
+    -->
+
+    <div>div태그입니다.</div>
+    <div>div태그입니다.</div>
+    <div class="bg-color-blue">div태그입니다.</div>
+    <div class="bg-color-blue">div태그입니다.</div>
+    <span class="bg-color-blue">span태그입니다.</span>
+    <div>div태그입니다.</div>
+    <div>div태그입니다.</div>
+
+    <div>
+        <p>
+            p태그는 문단 태그입니다.
+        </p>
+    </div>
+
+    <p>p태그는 문단태그입니다.</p>
+
+    <p>
+        저는
+        
+            span
+            <span>
+                태그입니다.
+            </span>
+        </span>
+    </p>
+
+    <div>
+        <p>p태그입니다.</p>
+        <span>span태그입니다.</span>
+        <span>span태그입니다.</span>
+        <div>div</div>
+        <span>span태그입니다.</span>
+        <div>div</div>
+    </div>
+
+</body>
+
+</html>

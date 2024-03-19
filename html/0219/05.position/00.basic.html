@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위치 속성</title>
+    <style>
+        /*
+        position 
+        left, right, bottom, top와 같은 위치값 속성들은 개별적으로 사용할 수 없으며,
+        반드시 position속성이 있어야 한다.
+        static은 기본값이므로 적용하지 않는다.
+
+        -relative : 상대적인 위치값
+        위치값을 잡는 기준이 포지션이 적용되기 전에 자신이 있던 위치가 시작 위치가 된다.
+        (top : 0, left : 0)
+        기존 위치와의 플로우를 계속 유지하는게 특징
+
+        -absolute : 절대적인 위치값
+        위치값을 잡는 기준이 부모요소의 위치값을 기준으로 한다.
+
+        부모요소를 잡는 기준은 부모요소에 position적용여부로 따진다(static제외)
+        부모요소에 position이 없는 경우 상위 요소를 기준으로 하게 된다.
+
+        특정한 경우(스크립트, 레이아웃 별개의 컨텐츠)를 제외하면 relative는 보통 absolute를
+        제어하기 위해서 부모요소에 적용후 자식요소를 absolute로 컨트롤 하는것이 보통의 방법
+
+        z-index : position, flex, grid 속성에 적용된 요소에 사용할 수 있으며,
+        나중에 적용된 요소에 제일 위에 올라가게 되므로 z-index로 보여지는 순번을
+        설정할 수 있다.
+
+        기본값 0이먀, 0보다 높을수록 우선순위를 가져와 앞에 출력된다.
+        같은 값이라면 나중에 입력된 요소가 우선순위를 가진다.
+
+        항상 앞에 있어야 하는 컨텐츠의 경우 상징적인 의미로 높은 값
+        ex)999,9999같은 높은 값을 지정하는 경우도 있다.
+
+        
+        */
+        .box{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            left: 100px;
+            position: relative;
+            z-index: 1;
+
+        }
+        .box02{
+            width: 300px;
+            height: 300px;
+            background: coral;
+            left: 100px;
+            top: 0px;
+            position: absolute;
+        }
+        .parent{
+            width: 200px;
+            height: 200px;
+            background: green;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+        .child{
+            width: 100px;
+            height: 100px;
+            background: lime;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        box
+    </div>
+
+    <div class="box02">
+        box02
+    </div>
+
+    <div class="parent">
+        <div class="child">
+            child
+        </div>
+    </div>
+</body>
+</html>
