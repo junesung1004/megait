@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sibling 형제 요소 찾기</title>
+    <script>
+      /*
+    sibling 
+    선택자를 기준으로 부모나 자식요소가 아닌
+    인접한 위에나 아래 있는 인접한 요소를 찾는 선택자
+    */
+      window.onload = function () {
+        let my = document.querySelector(".child3");
+
+        let prev = my.previousElementSibling; // node를 제외하고 탐색
+        let prev02 = my.previousSibling; // node를 포함하여 탐색한다.
+
+        let next = my.nextElementSibling;
+        let next02 = my.nextSibling;
+
+        console.log(prev);
+        console.log(prev02);
+
+        console.log(next);
+        console.log(next02);
+      };
+    </script>
+  </head>
+  <body>
+    <ul class="parent">
+      <li class="child1">child1</li>
+      <li class="child2">child2</li>
+      <li class="child3">child3</li>
+      <li class="child4">child4</li>
+      <li class="child5">child5</li>
+    </ul>
+  </body>
+</html>

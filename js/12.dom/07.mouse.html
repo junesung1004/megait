@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mouse array event</title>
+    <script>
+      /*
+      마우스 객체 이벤트
+      clientX, clientY
+      마우스 이벤트가 발생했을 때 '현재 창(브라우저)'을 기준으로 x축과 y축의 좌표를 반환
+      문서가 아닌 화면이 기준이기 때문에 문서의 길이에 영향을 받지 않는다.
+
+      pageX, pageY
+      마우스 이벤트가 발생했을 때 '문서를 기준'으로 x축과 y축의 좌표를 반환
+      문서가 기준이기 때문에 문서의 길이에 영향을 받는다.
+
+      screenX, screenY
+      마우스 이벤트가 발생했을 때 '화면을 기준'으로 x축과 y축의 자표를 반환
+
+      *디바이스의 크기가 기준이기 때문에 디바이스의 크기 종류가 다양해진 현재에는
+      자주 사용하지는 못함.
+
+      offsetX, offsetY
+      이벤트 대상이 기준이 되며, 이벤트 대상 안에서 클릭한 위치를 반환
+      client, page 화면 왼쪽 상단 끝이 left=0, top=0
+      offset은 클릭한 객체의 왼쪽 상단 끝이 left=0, top=0
+      */
+      window.onload = function () {
+        let text01 = document.querySelector(".text01");
+        let text02 = document.querySelector(".text02");
+        let text03 = document.querySelector(".text03");
+        let text04 = document.querySelector(".text04");
+
+        let box = document.querySelector(".box");
+
+        document.addEventListener("mousemove", function (e) {
+          //console.log(e);
+          /*
+          마우스 관련 이벤트는 매개변수 event로 요소들을 받아야 하기 때문에
+          매개변수가 반드시 존재해야 한다. 보통 e나 event로 매개변수로 표시한다.
+
+          e, event는 단순한 매개변수가 아닌 이벤트에 대한 상세한 정보들을 담고 있다.
+          그 정보들 안에서 필요한 특정 요소들을 받아오기 위함
+          */
+
+          let x1 = e.clientX;
+          let y1 = e.clientY;
+
+          let x2 = e.pageX;
+          let y2 = e.pageY;
+
+          let x3 = e.screenX;
+          let y3 = e.screenY;
+
+          text01.innerHTML = "clientX축 :" + x1 + "clientY축 :" + y1;
+          text02.innerHTML = "pageX축 :" + x2 + "pageY축 :" + y2;
+          text03.innerHTML = "screenX축 :" + x3 + "screenY축 :" + y3;
+        });
+
+        box.addEventListener("click", function (e) {
+          let x4 = e.offsetX;
+          let y4 = e.offsetY;
+
+          text04.innerHTML = "offsetX : " + x4 + "offsetY : " + y4;
+        });
+      };
+    </script>
+    <style>
+      body {
+        height: 300vh;
+      }
+
+      .text01,
+      .text02,
+      .text03,
+      .text04 {
+        position: fixed;
+        left: 30px;
+      }
+      .text01 {
+        top: 10px;
+      }
+      .text02 {
+        top: 50px;
+      }
+      .text03 {
+        top: 100px;
+      }
+      .text04 {
+        top: 150px;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        position: absolute;
+        top: 500px;
+        left: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="text01"></p>
+    <p class="text02"></p>
+    <p class="text03"></p>
+    <p class="text04"></p>
+
+    <div class="box">box</div>
+  </body>
+</html>
