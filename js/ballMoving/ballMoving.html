@@ -55,16 +55,70 @@
 
     <script>
       //setInterval로 공 이동시키기
+      window.onload = function () {
+        let ball = document.querySelector("#ball");
+        let bar = document.querySelector("#bar");
+        let startBtn = document.querySelector("#start_btn");
+        let stopBtn = document.querySelector("#stop_btn");
 
-      //1. 시작 버튼을 누르면 공이 현재 위치에서 움직이기 시작
-      let start_btn = document.querySelector(".start_btn");
-      start_btn.addEventListener("click", function () {});
+        let startX = ball.offsetLeft; // 50
+        let endX = bar.offsetWidth + startX - ball.offsetWidth; // offsetWidth = width 반환
+        let currentX = startX; // 공이 이동할 위치값을 담을 변수
+        let stepX = 5; // 공이 한번에 이동할 거리
+        let angle = 0; // 공이 회전하는 기본값
+        let timer;
+        console.log(startX);
+        console.log(endX);
 
-      //2. 공이 bar의 길이안에서만 왕복운동을 할 수 있도록 제어
+        /*
+				상태값 관리
+				변수에 boolean값을 담아서 조건문으로 사용하는 방법을 많이 사용한다
+				불필요한 리소스의 사용을 방지하고 
+				*/
 
-      //3. 정지 버튼을 누르면 공이 멈춤
+        let isPlay = true;
 
-      //4. 다시 시작버튼을 누르면 현재 위치에서 재 시작
+        //1. 시작 버튼을 누르면 공이 현재 위치에서 움직이기 시작
+        startBtn.addEventListener("click", function () {
+          if (isPlay) {
+            //상태변수에 값을 생량하면 true를 반환
+            //clearInterval(timer);
+            timer = setInterval(ballMoving, 20);
+            isPlay = false;
+          }
+        });
+
+        //3. 정지 버튼을 누르면 공이 멈춤
+        stopBtn.addEventListener("click", function () {
+          if (!isPlay) {
+            clearInterval(timer);
+            isPlay = true;
+          }
+        });
+
+        function ballMoving() {
+          currentX += stepX;
+          angle += stepX;
+          //console.log(currentX);
+          ball.style.left = currentX + "px";
+          ball.style.transform = "rotate(" + angle + "deg)";
+
+          /*
+          if (currentX >= endX) {
+            stepX = -5;
+          } else if (currentX <= startX) {
+            stepX = +5;
+          }
+					*/
+          if (currentX >= endX || currentX <= startX) {
+            stepX = -stepX;
+          }
+        }
+
+        //2. 공이 bar의 길이안에서만 왕복운동을 할 수 있도록 제어
+
+        //4. 다시 시작버튼을 누르면 현재 위치에서 재 시작
+      };
     </script>
   </head>
   <body>
