@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>templateLiterals</title>
+    <script>
+      /*
+      es6에 추가된 새로운 기능
+      문자열 작성을 쉽게 작성하고 가독성을 올리게 해주는 작성 방법
+      기존에 문자열은 +연산자와 ''와 ""를 번갈아쓰게 되는 방식이기 때문에
+      복잡해지는 단점이 있었다.
+
+      새로운 문법에서는 ''와 "" 대신 ``(백틱)으로 대체하며 연산자 대신에 ${변수명}로 대체한다.
+      */
+
+      const name = "박";
+      const lastName = "준성";
+      const a = 10;
+      const b = 3;
+      const person = "홍길동";
+
+      console.log("제 성은" + name + "이름은" + lastName + "입니다.");
+      console.log(`제 성은 ${name} 이름은 ${lastName} 입니다.`);
+
+      console.log(`제 이름은 ${person}이구요, 나이는 ${a + b} 입니다`);
+      /*
+      백틱 요소 안에 있는 모든 요소들은 문자열로 변환되고 그 외에 ${}로 통일해서 감싼다.
+      ${} 안에 요소들은 문자열이 아닌 다른 요소로 인식하도록 되어 있다.
+      새로운 템플릿 문자열은 탭키나 엔터키도 인식한다.
+      */
+    </script>
+  </head>
+  <body></body>
+</html>
