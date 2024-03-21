@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background: #dddddd;
+        display: flex;
+        align-items: center;
+      }
+      .canvas {
+        width: 100%;
+        height: 50vh;
+        background: pink;
+        position: relative;
+        overflow: hidden;
+      }
+      .canvas > div {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+    <script>
+      /*
+        1. 마우스가 움직일때마다 이미지의 순번을 바꿔서 이미지가 교체
+        2. 이미지의 총 갯수가 영역의 가로 사이즈와 매치
+        3. 대입된 순번의 이미지를 백그라운드로 경로에 대입
+        4. 이미지가 들어갈 div를 동적으로 생성
+        */
+
+      window.onload = function () {
+        let canvas = document.querySelector(".canvas"); //이미지가 출력될 영역
+        let imgCount = 200;
+        let item = ""; //div를 생성할 변수
+
+        for (let i = 1; i <= imgCount; i++) {
+          item +=
+            "<div style=\"background-image:url('./videoimg/img" +
+            i +
+            ".png')\"></div>";
+        }
+        canvas.innerHTML = item;
+
+        let divs = document.querySelectorAll(".canvas > div");
+        console.log(divs);
+        //동적으로 요소를 생성하는 경우에는 생성보다 참조를 먼저 할 수 없다.
+
+        window.addEventListener("mousemove", function (e) {
+          let mouseX = e.pageX; //현재 마우스의 위치
+          let windowX = window.innerWidth; // innerWidth(가로값)
+          console.log(parseInt((mouseX / windowX) * imgCount));
+
+          let percent = parseInt((mouseX / windowX) * imgCount);
+          if (percent >= imgCount) {
+            percent = imgCount - 1;
+          }
+
+          for (let i = 0; i < imgCount; i++) {
+            divs[i].style.display = "none";
+          }
+          divs[percent].style.display = "block";
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <section class="container">
+      <article class="canvas"></article>
+    </section>
+  </body>
+</html>
