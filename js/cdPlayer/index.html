@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cd플레이어</title>
+    <link rel="stylesheet" href="common.css" />
+    <script>
+      /*
+        1. 선택자 잡기
+        2. 어떤 이벤트
+        3. 이벤트 객체와 실행되는 객체를 어떻게 연결할 것인지?
+        4. 실행되는 객체에게 class를 어떻게 전달할 것인지?
+        */
+
+      window.onload = function () {
+        let item = document.querySelectorAll(".item");
+        //하나가 아닌 여러개의 객체를 관리할 때에는 all을 선택
+
+        let nextBtn = document.querySelector(".next");
+        let prevBtn = document.querySelector(".prev");
+
+        let itemCount = 0; // 시작할 인덱스의 번호
+        let itemSize = item.length;
+
+        let dotItem = document.querySelectorAll(".dot-list li");
+
+        item[itemCount].classList.add("active");
+
+        console.log(itemCount);
+
+        nextBtn.addEventListener("click", function () {
+          if (itemCount < itemSize - 1) {
+            //인덱스는 0 부터 시작하기 때문에 갯수와 계산이 다르기 때문에 1씩 빼야 한다.
+            itemCount++;
+            console.log(itemCount);
+          } else {
+            itemCount = 0;
+          }
+
+          slideCount();
+        }); //next btn
+
+        prevBtn.addEventListener("click", function () {
+          if (itemCount > 0) {
+            itemCount--;
+          } else {
+            itemCount = itemSize - 1;
+          }
+          slideCount();
+        });
+
+        //복수선택자에 이벤트를 주는 경우 for문으로 이벤트로 적용해야 한다.
+        for (let i = 0; i < itemSize; i++) {
+          dotItem[i].addEventListener("click", function () {
+            itemCount = i;
+            slideCount();
+          });
+        }
+
+        function slideCount() {
+          for (let i = 0; i < itemSize; i++) {
+            if (itemCount === i) {
+              item[i].classList.add("active");
+              dotItem[i].classList.add("active");
+            } else {
+              item[i].classList.remove("active");
+              dotItem[i].classList.remove("active");
+            }
+          }
+        }
+        slideCount();
+      };
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="item">
+        <div class="disk">
+          <div class="disk-inner"></div>
+        </div>
+        <a
+          href="https://www.youtube.com/watch?v=nM0xDI5R50E"
+          target="_blank"
+          class="cover"
+        >
+          <img src="image/iu_0.jpg" alt="커버이미지" />
+        </a>
+      </div>
+
+      <div class="item">
+        <div class="disk">
+          <div class="disk-inner"></div>
+        </div>
+        <a
+          href="https://www.youtube.com/watch?v=nM0xDI5R50E"
+          target="_blank"
+          class="cover"
+        >
+          <img src="image/iu_1.jpg" alt="커버이미지" />
+        </a>
+      </div>
+
+      <div class="item">
+        <div class="disk">
+          <div class="disk-inner"></div>
+        </div>
+        <a
+          href="https://www.youtube.com/watch?v=nM0xDI5R50E"
+          target="_blank"
+          class="cover"
+        >
+          <img src="image/iu_2.jpg" alt="커버이미지" />
+        </a>
+      </div>
+
+      <div class="item">
+        <div class="disk">
+          <div class="disk-inner"></div>
+        </div>
+        <a
+          href="https://www.youtube.com/watch?v=nM0xDI5R50E"
+          target="_blank"
+          class="cover"
+        >
+          <img src="image/iu_3.jpg" alt="커버이미지" />
+        </a>
+      </div>
+    </div>
+
+    <div class="btn-container">
+      <button class="prev">PREV</button>
+      <ul class="dot-list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <button class="next">NEXT</button>
+    </div>
+  </body>
+</html>
