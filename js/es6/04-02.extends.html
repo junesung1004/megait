@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class 상속 문법</title>
+    <script>
+      /*
+      일반 생성자 함수에서 상속하는 방법
+      */
+
+      function Name(first, last) {
+        this.first = first;
+        this.last = last;
+        this.result = function () {
+          return `제 이름은 ${this.first} ${this.last} 입니다`;
+        };
+      }
+
+      let person01 = new Name("홍", "길동");
+      console.log(person01.result());
+
+      //Name의 값을 상속해서 전달하기
+      function Local02(first, last, local) {
+        //상속받을 새로운 생성자 함수 생성
+        //첫번째 인자로 주어진 객체를 사용해서 다른 곳에서 재사용할 수 있다.
+        //this.first가 아니고 this는 객체로 각각 this를 붙여준다.
+        Name.call(this, first, last); //call은 함수를 호출하는 메서드
+        //call에는 첫번째 인자는 함수 내에서 사용될 this값을 설정하는데 사용된다.
+        //객체나 원시형 타입이 들어올 수 있지만 호출되는 함수가 기대하는 형태의 값들을
+        //인자로 전달할 수 있는 요소만 넣을 수 있다.
+
+        this.local = local;
+        let LocalResult = this.result(); // 함수 형태의 this는 call이 아닌 변수로 따로 저장해서 관리를 한다.
+
+        this.result = function () {
+          return `${LocalResult}, 그리고 사는 곳은 ${this.local} 입니다`;
+        };
+      }
+
+      let person02 = new Local02("박", "준성", "인천");
+      console.log(person02.result());
+
+      /* class 셍성자 함수에서 상속하는 방법 */
+      class Name02 {
+        constructor(first, last) {
+          this.first = first;
+          this.last = last;
+        }
+        result() {
+          return `제 이름은 ${this.first} ${this.last} 입니다`;
+        }
+      }
+
+      let person03 = new Name02("홍", "길동");
+      console.log(person03.result());
+
+      class Local extends Name02 {
+        constructor(first, last, local) {
+          super(first, last); // 메서드를 호출하지 않기 때문에 result는 따로 호출
+          this.local = local;
+        }
+        result03() {
+          return `${super.result()}, 그리고 사는곳은 ${this.local} 입니다.`;
+        }
+      }
+
+      let person04 = new Local02("홍", "길동", "인천");
+      console.log(person04.result03());
+
+      /*
+        extends = 부모 클래스에서 상속받는 자손 클래스
+        ex) class Local02 extends Name02 = Name02에서 상속받는 Local클래스
+        -상속 : 부모 클래스에 있는 생성자 함수, 메서드를 자식요소에게 값을 전달
+
+        기존의 상속방식은 비슷하지만 구조를 명확하게 파악할 수 있고,
+        코드가 간결해진다. 코드의 중복을 방지하고 부모클래스의 수정으로 모든 자식요소의 값이 변경되기 때문에
+        관리할 때에도 편리하다라는 장점이 있다.
+
+        다중 상속이 불가능
+        자바스크립트 자체의 한계로 인해 다중상속은 안되며 단일 상속만 허용하고 있다.
+        */
+    </script>
+  </head>
+  <body></body>
+</html>

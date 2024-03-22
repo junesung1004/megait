@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+    점수 계산
+    1. 학생마다 국어점수와 영어점수를 더해서 출력하는 클래스 생성
+    2. 새로운 과목인 수학을 추가(상속 클래스)
+    3. 수학점수가 추가되는 학생은 총 합의 평균까지 구하기
+    */
+
+      /*window.onload = function () {
+        class Subject {
+          constructor(name, kor, eng) {
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+          }
+          result() {
+            let total1 = parseInt(this.kor) + parseInt(this.eng);
+            return `${this.name}학생의 국어점수는 ${this.kor}, 영어점수는 ${this.eng}입니다.
+            2개의 과목의 합은 ${total1}점 입니다.
+            `;
+          }
+        }
+
+        let person01 = new Subject("준성", "50", "80");
+        console.log(person01.result());
+
+        class New extends Subject {
+          constructor(name, kor, eng, math) {
+            super(name, kor, eng);
+            this.math = math;
+          }
+          result01() {
+            let total =
+              (parseInt(this.kor) + parseInt(this.eng) + parseInt(this.math)) /
+              3; // 각 점수를 숫자로 변환하여 더함
+            return `${super.result()}, 수학은${
+              this.math
+            } 입니다. 3과목의 평균은 ${total}입니다`;
+          }
+        }
+        let person02 = new New("준성", "20", "30", "40");
+        console.log(person02.result01());
+      };
+      */
+
+      class Score {
+        constructor(name, kor, eng) {
+          this.name = name;
+          this.kor = kor;
+          this.eng = eng;
+        }
+        sum() {
+          return this.kor + this.eng;
+        }
+        totalScore() {
+          return `${this.name}의 학생의 총 점수는 ${this.sum()}`;
+        }
+      }
+
+      let student01 = new Score("로이", 100, 60);
+      console.log(student01.totalScore());
+
+      class MathScore extends Score {
+        constructor(name, kor, eng, math) {
+          super(name, kor, eng);
+          this.math = math;
+        }
+        sum() {
+          return super.sum() + this.math; //기존 sum에 수학점수를 더하는 코드
+        }
+        totalScore() {
+          return this.sum() / 3;
+        }
+      }
+
+      let student02 = new MathScore("페이커", 50, 55, 20);
+      console.log(student02.totalScore());
+    </script>
+  </head>
+  <body></body>
+</html>
