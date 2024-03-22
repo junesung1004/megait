@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+      스프레드 연산자, 스프레드 오퍼레이터, 전개구문, 펼침연산자
+      배열, 함수, 객체등을 다룰 때 사용하는 연산자
+      객체나 배열을 분해할 때, 분해하고 남은 객체의 나머지를 다른 변수에 할당하는 문법
+      */
+
+      //case01 배열에서 사용 예시
+      let arr1 = [1, 2, 3];
+      let arr2 = [...arr1, 4, 5, 6]; // 배열의 확장
+      console.log(arr2);
+
+      //case02
+      let arr3 = [...arr1]; // 배열의 복제
+      console.log(arr3);
+
+      //case03
+      let arrMerge = [...arr1, ...arr2];
+      console.log(arrMerge);
+
+      //함수에서의 사용법
+      function sum01(a, b, c) {
+        return a + b + c;
+      }
+      console.log(sum01(...arr1));
+      //함수에서 여러 인수로 배열의 값을 활용해야 할 때 스프레드 연산자로 대체할 수 있다.
+
+      console.clear();
+
+      //객체에서 활용하는 방법
+      let obj01 = {
+        a: 1,
+        b: 2,
+      };
+
+      let obj02 = {
+        ...obj01,
+      };
+
+      let obj03 = {
+        c: 3,
+        d: 4,
+      };
+
+      let obj04 = {
+        ...obj01,
+        ...obj03,
+      };
+
+      let obj05 = {
+        ...obj04,
+        e: 5,
+      };
+
+      //console.log(obj02);
+      console.log(obj04);
+      console.log(obj05);
+
+      //case04 함수에서 인수 값의 역할
+      function test01(...args) {
+        console.log(args);
+      }
+      //여러 인수의 값을 받아서 배열 형태로 저장
+      test01(1, 2, 3, 4);
+
+      //case05 배열에서 분리, 추출
+      let { a, ...rest } = { a: 1, b: 2, c: 3, d: 4 };
+
+      //let {...rest, d} ={ a: 1, b: 2, c: 3, d: 4 };
+      /*
+      스프레드 연산자는 남은 요소를 뜻하기 때문에 항상 제일 뒤에 있오야 한다.
+      앞에 있는 경우 문법 에러가 나온다.
+      */
+
+      let [first, ...rest01] = [1, 2, 3, 4];
+      console.log(first); // 1
+      console.log(rest01); // [2,3,4]
+    </script>
+  </head>
+  <body></body>
+</html>

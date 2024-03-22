@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>멀티 상속하기</title>
+    <script>
+      /*
+      동물 정보 관리하는 class 생성
+      -이름, 종류, 나이, 성별의 속성을 관리
+      -동물의 종류에 따라 다른 울음소리를 출력
+      */
+
+      class Animals {
+        constructor(name, type, age, gender) {
+          this.name = name;
+          this.type = type;
+          this.age = age;
+          this.gender = gender;
+        }
+        speak() {
+          console.log(`동물 ${this.name}은 말을 할 수 없습니다.`);
+        }
+      }
+
+      class Dog extends Animals {
+        constructor(name, age, gender) {
+          super(name, "강아지", age, gender);
+          //매개변수에 값을 명시적으로 넣게 되면 생략되어도 기본값으로 출력된다.
+        }
+        speak() {
+          console.log("멍멍");
+        }
+      }
+
+      class Rabbit extends Animals {
+        constructor(name, age, gender) {
+          super(name, "토끼", age, gender);
+          //매개변수에 값을 명시적으로 넣게 되면 생략되어도 기본값으로 출력된다.
+        }
+      }
+
+      let animal01 = new Dog("해피", 3, "M");
+      animal01.speak();
+
+      let animal02 = new Rabbit("토순이", 5, "F");
+      animal02.speak();
+    </script>
+  </head>
+  <body></body>
+</html>
