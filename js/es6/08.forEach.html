@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    /*
+  forEach
+  -배열의 요소를 반복 새 배열을 만들지 않고 요소에 대한 작업을 수행
+  -값을 반환하지 않기 때문에 요소 수정에 주로 사용
+  -콜백 함수로 원본 내용이 수정
+  -새 배열을 수정하지 않고 각 배열의 요소에 대한 수정과 같은 작업을 할 때
+  (새 배열에 업데이트로 하는 방법도 가능)
+
+  */
+
+    let num = [1, 2, 3, 4];
+
+    //forEach
+    num.forEach((el) => {
+      console.log(el * el);
+    });
+
+    //map
+    let result = num.map((el) => {
+      return el * el;
+    });
+    console.log(result);
+
+    //forEach를 이용해서 새 배열에 값을 담는 방법
+    let num02 = [1, 2, 3, 4]; //참조할 배열값
+    let resultArr = []; // 새 값을 담을 빈 배열
+
+    num02.forEach((el) => {
+      let result = el * el;
+      resultArr.push(result);
+    });
+
+    console.log(resultArr);
+
+    //forEach 3개의 매개변수를 받아올 수 있다. map도 3개 가능
+    let alphabet = ["a", "b", "c"];
+    /*
+      3개의 매개변수 요소(element),순번(index), 참조배열(array)
+      element는 el이나 item 이라고 쓰며, (e는 event 와 겹침)
+      index는 i나 idx, index로 사용
+      array는 arr이나 array로 사용한다.
+      */
+    alphabet.forEach((el, idx, arr) => {
+      console.log(el);
+      console.log(idx);
+      console.log(arr);
+    });
+
+    window.onload = () => {
+      let carBrand = [
+        "현대",
+        "기아",
+        "볼보",
+        "bmw",
+        "벤츠",
+        "아우디",
+        "제네시스",
+      ];
+      let list = document.querySelector(".list");
+      let listItem = "";
+
+      let brandResult = (el, idx) => {
+        listItem += `<li>${idx + 1}번 브랜드 ${el}입니다.</li>`;
+        console.log(listItem);
+      };
+      carBrand.forEach(brandResult);
+      list.innerHTML = listItem;
+    };
+  </script>
+  <body>
+    <h1>자동차브랜드</h1>
+    <ul class="list"></ul>
+  </body>
+</html>

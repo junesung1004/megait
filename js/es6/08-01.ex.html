@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+      1.특정 조건에 만족하는 요소만 찾아서 새로운 배열로 출력
+      */
+
+      let student = [
+        { name: "kim", score: 60 },
+        { name: "park", score: 71 },
+        { name: "lee", score: 64 },
+        { name: "hong", score: 88 },
+        { name: "bo", score: 41 },
+      ];
+
+      // 학생들 중에 60점보다 높은 학생들만 따로 뽑아서 새로운 배열에 담아서 출력
+
+      let studentScore = [];
+      student.forEach((el) => {
+        if (el.score >= 60) {
+          studentScore.push(el);
+        }
+      });
+      console.log(studentScore);
+    </script>
+  </head>
+  <body></body>
+</html>

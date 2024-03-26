@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+    split() = 문자열을 배열 형태로 변환해주는 메서드
+    배열형태로 받아와주는 기준은 특정한 문자열을 구분해서 분해해서
+    각각의 배열로 저장
+    특정한 문자열을 구분하는 기준은 개발자가 선택한다.
+    */
+
+      //cas01 문자열을 특정한 기준으로 배열로 변환하는 방법
+      let arrTest = "banana, apple, lemon";
+      let testArr = arrTest.split(",");
+      console.log(testArr);
+
+      //case02 배열의 값이나 객체의 속성을 개별 변수로 분해 할 수도 있다.
+      let number = [1, 2, 3];
+      let [a, b, c] = number; // a=1, b=2, c=3
+      console.log(number);
+      console.log(a, b, c);
+
+      //날짜에서 필요한 값만 출력하기
+      let today = new Date(); // 현재 날짜 출력
+      console.log(today);
+      let useDate = today.toISOString();
+      console.log(useDate);
+      //toISOString() ISO형식으로 문자열을 반환해서 반환 날짜의 포멧을 바꿔서 출력해주는 메서드
+
+      let useDateArr = useDate.substring(0, 10);
+      console.log(useDateArr);
+      //substring(시작인덱스, 출력할 글자 수) = 특정 순번의 문자열을 추출하는 메서드
+      //시작 인덱스부터 출력할 글자 수 까지만 출력하고 나머지는 버린다.
+
+      let [y, m, d] = useDateArr.split("-");
+      console.log(y, m, d);
+    </script>
+  </head>
+  <body></body>
+</html>
