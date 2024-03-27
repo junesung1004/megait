@@ -23,6 +23,7 @@ function mainSlider() {
   const speed = 1000; // 슬라이드 진행 시간
 
   let timer;
+  let enadbleClick = true;
 
   console.log(btns);
   console.log(btnsArr);
@@ -40,8 +41,19 @@ function mainSlider() {
       //querySelectorAll로 반환된 객체는 배열 형태의 nodeList로 저장된다.
       //btns는 배열이 아닌 상태이므로 indexOf를 사용할 수 없다.
 
-      activeSlide(activeIdx, btns);
-      activeSlide(activeIdx, panelItem);
+      if (enadbleClick) {
+        activeSlide(activeIdx, btns);
+        activeSlide(activeIdx, panelItem);
+        circle.className = "";
+        circle.classList.add(`rot${activeIdx + 1}`);
+
+        animate(panel, {
+          prop: "left",
+          val: -canvasWidth * activeIdx,
+          duration: speed,
+        });
+        enadbleClick = false;
+      }
 
       /*
       슬라이드를 움직이는 방법
@@ -61,15 +73,6 @@ function mainSlider() {
       -1초당 60프레임을 호출(디스플레이 주사율에 차이)
       -브라우저의 호출 주기와 연동되어 있어서 끊김이 없고 성능면으로 더 우수
       */
-
-      circle.className = "";
-      circle.classList.add(`rot${activeIdx + 1}`);
-
-      animate(panel, {
-        prop: "left",
-        val: -canvasWidth * activeIdx,
-        duration: speed,
-      });
     });
   });
 
@@ -124,6 +127,7 @@ function mainSlider() {
       } else {
         //requestAnimationFrame를 종료시키는 메서드
         cancelAnimationFrame(timer);
+        enadbleClick = true;
       }
 
       let result = currentVal + (opt.val - currentVal) * progress;

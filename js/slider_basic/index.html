@@ -6,7 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slider</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="./index.js"></script>
+    <script src="./scriptClass.js"></script>
+    <script>
+      window.onload = () => {
+        new BasicSlider("#slider", {
+          btns: ".navi",
+          panel: ".panel",
+          speed: 1000,
+          callback: (i) => {
+            let circle = document.querySelector("#circle");
+            circle.className = "";
+            circle.classList.add(`rot${i}`);
+          },
+        });
+      };
+    </script>
   </head>
   <body>
     <main>
