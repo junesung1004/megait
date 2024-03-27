@@ -63,6 +63,7 @@ window.onload = () => {
       onNextSlide(slider);
       enableClick = false;
       nextTimer = setTimeout(() => {
+        enableClick = true;
         autoSlide();
       }, 2000);
     }
@@ -93,6 +94,7 @@ window.onload = () => {
       onPrevSlide(slider);
       enableClick = false;
       nextTimer = setTimeout(() => {
+        enableClick = true;
         autoSlide();
       }, 2000);
     }
