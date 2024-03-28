@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    /*
+  이벤트 처리 방법
+  사용자가 스크립트로 이벤트를 작성할때 주의할 것
+  -기본 이벤트를 가지고 있는 태그들(a, reset, submit...) 에게 이벤트를 작성하게 되면
+  기본 이벤트도 같이 실행되기 때문에 다른 결과가 나올 수 있다.
+
+  기본 이벤트를 중지하는 방법
+  e.preventDefault() : 태그가 가지고 있는 기본 이벤트를 중지하고 내가 만들어 놓은 
+  로직만 실행하게 하는 메서드
+  함수를 실행할 때 가장 처음에 실행시켜야 한다.
+
+  자바스크립트, 리액트에서 이벤트를 설정할때  필수적으로 사용해야 하는 속성
+
+  2. 자식요소의 이벤트가 부모요소에서도 전달되어서 실행되는경우 - 버블링
+  e.stopPropagation() : 상위요소로 이벤트 전파되는 버블링 방지
+  -실제 상황에서는 많이 겪지는 않는 현상이지만 구조적으로 전파되는 현상이 종종 발생
+  
+
+  3. return false
+  -자바스크립트에서 거의 사용하지는 않음(사용처가 조금 달라짐)
+  -보통 제이쿼리에서 e.preventDefault() 와 e.stopPropagation() 대신 쓰이는 이벤트 처리방법
+  처음에 작성하지 않고 제일 마지막에 작성
+  */
+    window.onload = function () {
+      const link = document.querySelector(".link-btn");
+      link.addEventListener("click", function () {
+        document.write("hi");
+      });
+
+      const topBtn = document.querySelector(".top-btn");
+      topBtn.addEventListener("click", function (e) {
+        //console.log(e);
+        e.preventDefault();
+        console.log("11");
+      });
+
+      document.querySelector(".parent").addEventListener("click", function (e) {
+        console.log("부모요소");
+      });
+
+      document.querySelector(".btn").addEventListener("click", function (e) {
+        e.stopPropagation(); // 상위 요소로 이벤트가 전달되는 버블링 방지
+        console.log("자식요소");
+      });
+    };
+  </script>
+  <style>
+    body,
+    html {
+      height: 3000px;
+    }
+
+    .top-btn {
+      position: fixed;
+      top: 0;
+      left: 300px;
+      background-color: black;
+      color: #fff;
+      padding: 50px 25px;
+    }
+  </style>
+  <body>
+    <a href="https://www.naver.com" class="link-btn">링크클릭</a>
+    <a href="#" class="top-btn">aaa</a>
+    <div class="parent">
+      <button class="btn">버튼입니다</button>
+    </div>
+  </body>
+</html>
