@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-       /*
-       쇼핑 카드 만들기
-       -상품을 추가하기
-       -추가된 상품의 카트 리스트를 조회하기
-       -카트 내의 총 상품 가격 계산하기
-       */
+      /*
+      쇼핑 카드 만들기
+      -상품을 추가하기
+      -추가된 상품의 카트 리스트를 조회하기
+      -카트 내의 총 상품 가격 계산하기
+      */
 
-       class ShoppingCart{
-        constructor(){
-            this.products = []//추가하는 상품을 배열로 받아오기 위해 빈 배열로 초기화
+      class ShoppingCart {
+        constructor() {
+          this.products = []; //추가하는 상품을 배열로 받아오기 위해 빈 배열로 초기화
         }
-       }
-        
+        addProducts(productName, price) {
+          this.products.push({ name: productName, price: price });
+        }
+        listProducts() {
+          this.products.forEach((el, idx) => {
+            console.log(`${idx} : ${el.name} - ${el.price}`);
+          });
+        }
+      }
+
+      window.onload = () => {
+        const myCart = new ShoppingCart();
+        myCart.addProducts("apple", 5000);
+        myCart.listProducts();
+      };
     </script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>
