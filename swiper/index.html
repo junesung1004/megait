@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        /*
+        swiper 슬라이드 라이브러리 
+        1. 선택자를 변경하지 않는게 가장 좋다.
+        선택자는 swiper-container > swiper-wrapper > swiper-slide 의 순서로
+        구조가 생성되기 때문에 규칙을 잘 지키는 것이 중요
+        */
+
+
+        window.onload = ()=>{
+            const slider = new Swiper('.swiper-container',{
+                autoplay : {
+                    delay : 2000, //다음 슬라이드로 넘어가는 시간(ms)
+                    disableOnInteraction : true
+                    /*
+                    disableOnInteraction 자동재생시 스와이프 개입 후 행동 설정
+                    true면 스와이퍼 후 자동재생이 되지 않음
+                    기본값은 false
+                    */
+                },
+                loop : true,//무한 루프 설정 기본값은 false
+                loopAdditionalSlides : 1,
+                /*
+                loop상태일때 미리 로드해야 하는 추가 슬라이드 수를 정의
+                루프가 연속되어야 할때 오류를 방지하는데 도움을 준다.
+                */
+                slidesPerView : 1,//화면에 보여질 슬라이드의 갯수
+                spaceBetween : 20, //슬라이드 사이 여백
+                centerSliders : true, //슬라이드 가운데 배치
+                //direction : 'vertical',//슬라이드 방향 기본값(horizontal)
+                //allowTouchMove : false, //스와이프 기능 정지
+                a11y : false,
+                //접근성 사용 여부 매개변수 키보드 제어, 리더기 사용, 
+                //접근성 향상 네이게이션 기능, wai-aria사용여부에 관한 값
+                //기본값은 true며 특정한 경우가 아니라면 false를 안해도 됨
+                navigation : {
+                    //슬라이드 좌우 버튼 설정
+                    prevEl : '.swiper-button-prev',
+                    nextEl : '.swiper-button-next'
+                    //사용자가 클래스를 직접 만들어서 그걸 연결해도 된다.
+                },
+                pagination:{
+                    el : '.swiper-pagination',
+                    clickable : true,//클릭여부 설정 기본값 false
+                    type : 'bullet', //버튼 모영 설정 기본값은 bullet이며 종류는 bullet과 fraction이 있다.
+                },
+                scrollbar : {
+                    el : '.swiper-scrollbar'
+                },
+                effect : 'slide',
+                //슬라이드 전환 효과 기본값 slide
+                //fade, cube, flip , coverflow , creative(사용자 정의)
+                breakpoints : {
+                    768:{
+                        slidesPerView : 2,
+                    },
+                    1024:{
+                        slidesPerView : 3,
+                    }
+                }
+
+
+            })
+        }
+
+
+
+
+    </script>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .slide1 {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide1 .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+        }
+
+        .slide1 .swiper-slide:nth-of-type(1) {
+            background: lightblue;
+        }
+
+        .slide1 .swiper-slide:nth-of-type(2) {
+            background: lightpink
+        }
+
+        .slide1 .swiper-slide:nth-of-type(3) {
+            background: lightcoral
+        }
+
+        .slide1 .swiper-slide:nth-of-type(4) {
+            background: lightseagreen
+        }
+
+        .slide1 .swiper-slide:nth-of-type(5) {
+            background: lightgoldenrodyellow
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper-container slide1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">item1</div>
+            <div class="swiper-slide">item2</div>
+            <div class="swiper-slide">item3</div>
+            <div class="swiper-slide">item4</div>
+            <div class="swiper-slide">item5</div>
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+</body>
+
+</html>
